@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="RIDER_MODULE" version="4">
+  <component name="FacetManager">
+    <facet type="android" name="Default Android Facet">
+      <configuration />
+    </facet>
+  </component>
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$/../../../dots/Samples/Packages/com.unity.entities/Unity.Entities" />
+    <content url="file://$MODULE_DIR$/../../../dots/Samples/Packages/com.unity.entities/Unity.Entities.BuildUtils" />
+    <content url="file://$MODULE_DIR$/../../../dots/Samples/Packages/com.unity.entities/Unity.Entities.Editor" />
+    <content url="file://$MODULE_DIR$/../../../dots/Samples/Packages/com.unity.entities/Unity.Entities.Hybrid" />
+    <content url="file://$MODULE_DIR$/../../../dots/Samples/Packages/com.unity.entities/Unity.Entities.Properties" />
+    <content url="file://$MODULE_DIR$/../../../dots/Samples/Packages/com.unity.entities/Unity.Entities.StaticTypeRegistry" />
+    <content url="file://$MODULE_DIR$/../../../dots/Samples/Packages/com.unity.entities/Unity.Mathematics.Extensions" />
+    <content url="file://$MODULE_DIR$/../../../dots/Samples/Packages/com.unity.entities/Unity.Mathematics.Extensions.Hybrid" />
+    <content url="file://$MODULE_DIR$/../../../dots/Samples/Packages/com.unity.entities/Unity.Scenes.Editor" />
+    <content url="file://$MODULE_DIR$/../../../dots/Samples/Packages/com.unity.entities/Unity.Scenes.Hybrid" />
+    <content url="file://$MODULE_DIR$/../../../dots/Samples/Packages/com.unity.entities/Unity.Transforms" />
+    <content url="file://$MODULE_DIR$/../../../dots/Samples/Packages/com.unity.entities/Unity.Transforms.Editor" />
+    <content url="file://$MODULE_DIR$/../../../dots/Samples/Packages/com.unity.entities/Unity.Transforms.Hybrid" />
+    <content url="file://$MODULE_DIR$/../../../dots/Samples/Packages/com.unity.jobs/Editor" />
+    <content url="file://$MODULE_DIR$/../../../dots/Samples/Packages/com.unity.jobs/Unity.Jobs" />
+    <content url="file://$MODULE_DIR$/../../../dots/Samples/Packages/com.unity.rendering.hybrid/Unity.Rendering.Hybrid" />
+    <content url="file://$MODULE_DIR$/../.." />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>
