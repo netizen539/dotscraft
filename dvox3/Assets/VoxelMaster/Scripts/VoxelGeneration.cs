@@ -189,7 +189,7 @@ namespace VoxelMaster
             Block[,,] blocks = new Block[ChunkSize, ChunkSize, ChunkSize];
             bool isEmpty = true; // Important variable to determine if the whole chunk we are generating is empty, if it is, don't bother filling & refreshing the chunk.
             Chunk c = terrain.CreateChunk(v);
-
+            
             for (int x = 0; x < ChunkSize; x++)
             {
                 for (int y = 0; y < ChunkSize; y++)

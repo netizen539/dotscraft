@@ -11,17 +11,17 @@ using UnityEngine.Rendering;
 
 public class BlockVisibleJobSystem : JobComponentSystem
 {
-    EndSimulationEntityCommandBufferSystem m_EndFrameBarrier;
+    BeginPresentationEntityCommandBufferSystem m_EndFrameBarrier;
 
     protected override void OnCreate()
     {
-        m_EndFrameBarrier = World.GetOrCreateSystem<EndSimulationEntityCommandBufferSystem>();
+        m_EndFrameBarrier = World.GetOrCreateSystem<BeginPresentationEntityCommandBufferSystem>();
     }
 
     struct HideUnseenBlocksJob : IJobForEachWithEntity<Translation, BlockTagComponent>
     {
         [ReadOnly]
-        public EntityCommandBuffer commandBuffer;
+        public EntityCommandBuffer.Concurrent commandBuffer;
         
         public void Execute(Entity entity, int index, [ReadOnly] ref Translation c0, [ReadOnly]ref BlockTagComponent c1)
         {
@@ -29,17 +29,16 @@ public class BlockVisibleJobSystem : JobComponentSystem
             int zFloor = (int)c0.Value.z;
             if ((xFloor % 2) == 0 && (zFloor % 2) == 0)
             {
-                Debug.Log("RJ idx:"+index+"entity:"+entity.Index+"xFloor:"+xFloor+" zFloor:"+zFloor);
-                commandBuffer.AddComponent(entity, new Disabled());
+             //   Debug.Log("RJ idx:"+index+"entity:"+entity.Index+"xFloor:"+xFloor+" zFloor:"+zFloor);
+                commandBuffer.AddComponent(index, entity, new Disabled());
             }
         }
     }
     
     protected override JobHandle OnUpdate(JobHandle inputDeps)
-    {
+    {        
         var job = new HideUnseenBlocksJob();
-//        var ecbSystem = World.GetOrCreateSystem<EndSimulationEntityCommandBufferSystem>();
-        job.commandBuffer = m_EndFrameBarrier.CreateCommandBuffer();
+        job.commandBuffer = m_EndFrameBarrier.CreateCommandBuffer().ToConcurrent();
         var handle = job.Schedule(this, inputDeps);
         m_EndFrameBarrier.AddJobHandleForProducer(handle);
         return handle;
