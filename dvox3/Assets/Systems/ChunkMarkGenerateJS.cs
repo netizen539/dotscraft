@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Cryptography.X509Certificates;
+using Unity.Burst;
 using Unity.Entities;
 using Unity.Jobs;
 using UnityEngine;
@@ -11,17 +12,25 @@ using Unity.Transforms;
 
 public class ChunkMarkGenerateJS : JobComponentSystem
 {
-    public static Dictionary<float3, int> chunks = new Dictionary<float3, int>();
-    public static float generationDistance = 128.0f;
-    public static int ChunkSize = 16;
+    //public static Dictionary<float3, int> chunks = new Dictionary<float3, int>();
+    public static NativeHashMap<float3, int> chunks;
+    public static readonly float generationDistance = 128.0f;
+    public static readonly float generationDistanceSquared = generationDistance * generationDistance;
+    public static readonly int ChunkSize = 16;
     
     BeginSimulationEntityCommandBufferSystem ecbSystem;
     
     protected override void OnCreate()
     {
         ecbSystem = World.GetOrCreateSystem<BeginSimulationEntityCommandBufferSystem>();
+        chunks = new NativeHashMap<float3, int>(4096, Allocator.Persistent);
     }
-    
+
+    protected override void OnDestroy()
+    {
+        chunks.Dispose();
+    }
+
     private struct Pair
     {
         public float distance;
@@ -36,13 +45,11 @@ public class ChunkMarkGenerateJS : JobComponentSystem
 
     private static int ChunkRound(float v, int ChunkSize)
     {
-        return Mathf.FloorToInt(v / ChunkSize) * ChunkSize;
+        return ((int)(math.floor(v / ChunkMarkGenerateJS.ChunkSize)) * ChunkSize);
     }
 
-    private static float3[] GetChunkGrid(float3 pos, int chunkSize)
-    {
-        List<Pair> grid = new List<Pair>();
-
+    private static void BuiildChunkGrid(float3 pos, int chunkSize, EntityCommandBuffer.Concurrent ecb, int index)
+    {        
         int lowX = ChunkRound(pos.x - generationDistance, chunkSize);
         int lowY = ChunkRound(pos.y - generationDistance, chunkSize);
         int lowZ = ChunkRound(pos.z - generationDistance, chunkSize);
@@ -58,25 +65,26 @@ public class ChunkMarkGenerateJS : JobComponentSystem
                 for (int z = lowZ; z <= highZ; z += chunkSize)
                 {
                     float3 v = new float3(x, y, z);
-                    float distance = Vector3.Distance(new Vector3(x,y,z), new Vector3(pos.x, pos.y, pos.z));
 
-                    if (distance <= generationDistance && !chunks.ContainsKey(v))
+                    float distanceSquared = math.distancesq(v, pos);
+
+                    int _d;
+                    if (distanceSquared <= generationDistanceSquared && !chunks.TryGetValue(v, out _d))
                     {
-                        grid.Add(new Pair(distance, v));
+                        int id = CreateChunkEntity(v, ecb, index);
+                        chunks.ToConcurrent().TryAdd(v, id);
                     }
                 }
             }
         }
-
-        return grid.OrderBy(o => o.distance).Select(o => o.pos).ToArray();
     }
 
-    private static void CreateChunkEntity(float3 v, EntityCommandBuffer.Concurrent ecb, int index)
+    private static int CreateChunkEntity(float3 v, EntityCommandBuffer.Concurrent ecb, int index)
     {
-        Entity entity = ecb.CreateEntity(index);
-        var pending = new ChunkPendingGenerate();
-        pending.pos = v;
+        var entity = ecb.CreateEntity(index);
+        var pending = new ChunkPendingGenerate { pos = v };
         ecb.AddComponent(index, entity, pending);
+        return entity.Index;
     }
     
     struct SpawnChunksAround : IJobForEachWithEntity<Translation, ChunkGenerator>
@@ -93,12 +101,7 @@ public class ChunkMarkGenerateJS : JobComponentSystem
             if (!lastPos.Equals(curPos))
             {
                 c1.lastPos = curPos;
-                float3[] chunkGrid = GetChunkGrid(lastPos, ChunkSize);
-
-                for (int i = 0; i < chunkGrid.Length; i++)
-                {
-                    CreateChunkEntity(chunkGrid[i], commandBuffer, index);                    
-                }
+                BuiildChunkGrid(lastPos, ChunkSize, commandBuffer, index);
             }
         }
     }

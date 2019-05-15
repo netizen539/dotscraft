@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Unity.Burst;
 using Unity.Collections;
 using Unity.Entities;
 using Unity.Jobs;
@@ -11,10 +12,39 @@ using UnityEngine;
 public class ChunkGenerateJS : JobComponentSystem
 {
     BeginInitializationEntityCommandBufferSystem ecbSystem;
+    static RenderMesh cubeRenderMesh;
+    static Entity blockPrefab;
+
+    private static Mesh GetCubeMesh()
+    {
+        GameObject go = GameObject.CreatePrimitive(PrimitiveType.Cube);
+        Mesh mesh = go.GetComponent<MeshFilter>().sharedMesh;
+        GameObject.Destroy(go);
+        return mesh;
+    }
+
+    private static Material GetCubeMaterial()
+    {
+        return Resources.Load("cubeMaterial", typeof(Material)) as Material;
+    }
     
     protected override void OnCreate()
     {
         ecbSystem = World.GetOrCreateSystem<BeginInitializationEntityCommandBufferSystem>();
+        cubeRenderMesh = new RenderMesh()
+        {
+            mesh = GetCubeMesh(),
+            material = GetCubeMaterial()
+        };
+
+        EntityArchetype arch;
+        
+        EntityManager em = ecbSystem.EntityManager;
+        blockPrefab = em.CreateEntity();
+        em.AddSharedComponentData(blockPrefab, cubeRenderMesh);
+        em.AddComponentData(blockPrefab, new Rotation() {Value=Quaternion.identity});
+        em.AddComponentData(blockPrefab, new LocalToWorld());
+        em.AddComponentData(blockPrefab, new BlockTagComponent());
     }
 
     private static float Remap(float value, float iMin, float iMax, float oMin, float oMax) // A remap function to help you in your procedural generation.
@@ -96,29 +126,12 @@ public class ChunkGenerateJS : JobComponentSystem
     
     private static void CreateBlockEntity(ChunkPendingGenerate chunk, float x, float y, float z, EntityCommandBuffer.Concurrent ecb, int index)
     {
-        if (MeshHack.CubeMesh == null)
-            return;
-        
-        var cubeRenderMesh = new RenderMesh()
-        {
-            mesh      =  MeshHack.CubeMesh,
-            material =  MeshHack.CubeMaterial
-        };
 
-        //ivar cmdSystem = Unity.Entities.World.Active.GetOrCreateSystem<BeginInitializationEntityCommandBufferSystem>();
-        //var cmdBuffer = cmdSystem.CreateCommandBuffer();
-        Entity entity = ecb.CreateEntity(index);
-        ecb.AddSharedComponent(index, entity, cubeRenderMesh);
-        ecb.AddComponent(index, entity, new Rotation()
-        {
-            Value = Quaternion.identity
-        });
-        ecb.AddComponent(index, entity, new LocalToWorld());
-            
+
+        Entity entity = ecb.Instantiate(index, blockPrefab);    
         float3 p = new float3(chunk.pos.x + x, chunk.pos.y+ y, chunk.pos.z+ z);
         var translation = new Translation() { Value = p };
-        ecb.AddComponent(index, entity, translation); 
-        ecb.AddComponent(index, entity, new BlockTagComponent()); 
+        ecb.AddComponent(index, entity, translation);
     }    
     
     struct GenerateChunkJob : IJobForEachWithEntity<ChunkPendingGenerate>
@@ -145,10 +158,12 @@ public class ChunkGenerateJS : JobComponentSystem
             }
 
             commandBuffer.RemoveComponent<ChunkPendingGenerate>(index, entity);
+            commandBuffer.AddComponent(index, entity, new ChunkFinishedGenerate());
         }
 
 
     }
+
     
     protected override JobHandle OnUpdate(JobHandle inputDeps)
     {
