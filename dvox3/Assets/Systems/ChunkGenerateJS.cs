@@ -17,8 +17,8 @@ public class ChunkGenerateJS : JobComponentSystem
 
     private static Mesh GetCubeMesh()
     {
-        GameObject go = GameObject.CreatePrimitive(PrimitiveType.Cube);
-        Mesh mesh = go.GetComponent<MeshFilter>().sharedMesh;
+        var go = GameObject.CreatePrimitive(PrimitiveType.Cube);
+        var mesh = go.GetComponent<MeshFilter>().sharedMesh;
         GameObject.Destroy(go);
         return mesh;
     }
@@ -31,7 +31,7 @@ public class ChunkGenerateJS : JobComponentSystem
     protected override void OnCreate()
     {
         ecbSystem = World.GetOrCreateSystem<BeginInitializationEntityCommandBufferSystem>();
-        cubeRenderMesh = new RenderMesh()
+        cubeRenderMesh = new RenderMesh
         {
             mesh = GetCubeMesh(),
             material = GetCubeMaterial()
@@ -42,9 +42,10 @@ public class ChunkGenerateJS : JobComponentSystem
         EntityManager em = ecbSystem.EntityManager;
         blockPrefab = em.CreateEntity();
         em.AddSharedComponentData(blockPrefab, cubeRenderMesh);
-        em.AddComponentData(blockPrefab, new Rotation() {Value=Quaternion.identity});
+        em.AddComponentData(blockPrefab, new Rotation { Value = Quaternion.identity });
         em.AddComponentData(blockPrefab, new LocalToWorld());
         em.AddComponentData(blockPrefab, new BlockTagComponent());
+        em.AddComponentData(blockPrefab, new Translation { Value = float3.zero});
     }
 
     private static float Remap(float value, float iMin, float iMax, float oMin, float oMax) // A remap function to help you in your procedural generation.
@@ -124,51 +125,40 @@ public class ChunkGenerateJS : JobComponentSystem
         }
     }
     
-    private static void CreateBlockEntity(ChunkPendingGenerate chunk, float x, float y, float z, EntityCommandBuffer.Concurrent ecb, int index)
-    {
-
-
-        Entity entity = ecb.Instantiate(index, blockPrefab);    
-        float3 p = new float3(chunk.pos.x + x, chunk.pos.y+ y, chunk.pos.z+ z);
-        var translation = new Translation() { Value = p };
-        ecb.AddComponent(index, entity, translation);
-    }    
-    
     struct GenerateChunkJob : IJobForEachWithEntity<ChunkPendingGenerate>
     {
-        [ReadOnly]
         public EntityCommandBuffer.Concurrent commandBuffer;
-
-        public void Execute(Entity entity, int index, ref ChunkPendingGenerate chunk)
+        public int ChunkSize;
+        
+        public void Execute(Entity e, int index, ref ChunkPendingGenerate chunk)
         {
-            for (int x = 0; x < ChunkMarkGenerateJS.ChunkSize; x++)
+            for (int x = 0; x < ChunkSize; x++)
             {
-                for (int y = 0; y < ChunkMarkGenerateJS.ChunkSize; y++)
+                for (int y = 0; y < ChunkSize; y++)
                 {
-                    for (int z = 0; z < ChunkMarkGenerateJS.ChunkSize; z++)
+                    for (int z = 0; z < ChunkSize; z++)
                     {
                         short id = generateBlock(chunk, x, y, z);
 
                         if (id != -1) //Dont create air blocks
                         {
-                            CreateBlockEntity(chunk, x, y, z, commandBuffer, index);
+                            var entity = commandBuffer.Instantiate(index, blockPrefab);    
+                            var p = new float3(chunk.pos.x + x, chunk.pos.y + y, chunk.pos.z + z);
+                            var translation = new Translation { Value = p };
+                            commandBuffer.SetComponent(index, entity, translation);
                         }
                     }
                 }
             }
 
-            commandBuffer.RemoveComponent<ChunkPendingGenerate>(index, entity);
-            commandBuffer.AddComponent(index, entity, new ChunkFinishedGenerate());
+            commandBuffer.RemoveComponent<ChunkPendingGenerate>(index, e);
         }
-
-
     }
 
     
     protected override JobHandle OnUpdate(JobHandle inputDeps)
     {
-        var job = new GenerateChunkJob();
-        job.commandBuffer = ecbSystem.CreateCommandBuffer().ToConcurrent();
+        var job = new GenerateChunkJob { commandBuffer = ecbSystem.CreateCommandBuffer().ToConcurrent(), ChunkSize = ChunkMarkGenerateJS.ChunkSize };
         var handle = job.Schedule(this, inputDeps);
         ecbSystem.AddJobHandleForProducer(handle);
         return handle;   
