@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Cryptography.X509Certificates;
@@ -13,7 +14,7 @@ using Unity.Transforms;
 public class ChunkMarkGenerateJS : JobComponentSystem
 {
     //public static Dictionary<float3, int> chunks = new Dictionary<float3, int>();
-    public static NativeHashMap<float3, int> chunks;
+    public static Dictionary<float3, int> chunks;
     public static readonly float generationDistance = 128.0f;
     public static readonly float generationDistanceSquared = generationDistance * generationDistance;
     public static readonly int ChunkSize = 16;
@@ -23,12 +24,13 @@ public class ChunkMarkGenerateJS : JobComponentSystem
     protected override void OnCreate()
     {
         ecbSystem = World.GetOrCreateSystem<BeginSimulationEntityCommandBufferSystem>();
-        chunks = new NativeHashMap<float3, int>(4096, Allocator.Persistent);
+      //  chunks = new NativeHashMap<float3, int>(4096, Allocator.Persistent);
+        chunks = new Dictionary<float3, int>();
     }
 
     protected override void OnDestroy()
     {
-        chunks.Dispose();
+       // chunks.Dispose();
     }
 
     private struct Pair
@@ -72,7 +74,8 @@ public class ChunkMarkGenerateJS : JobComponentSystem
                     if (distanceSquared <= generationDistanceSquared && !chunks.TryGetValue(v, out _d))
                     {
                         int id = CreateChunkEntity(v, ecb, index);
-                        chunks.ToConcurrent().TryAdd(v, id);
+                        //chunks.ToConcurrent().TryAdd(v, id);
+                        chunks.Add(v, id);
                     }
                 }
             }
@@ -82,8 +85,11 @@ public class ChunkMarkGenerateJS : JobComponentSystem
     private static int CreateChunkEntity(float3 v, EntityCommandBuffer.Concurrent ecb, int index)
     {
         var entity = ecb.CreateEntity(index);
-        var pending = new ChunkPendingGenerate { pos = v };
+        var position = new ChunkPosition() { pos = v };
+        var pending = new ChunkPendingGenerate();
         ecb.AddComponent(index, entity, pending);
+        ecb.AddComponent(index, entity, position);
+        ecb.AddBuffer<ChunkBufferData>(index, entity);
         return entity.Index;
     }
     
@@ -101,6 +107,7 @@ public class ChunkMarkGenerateJS : JobComponentSystem
             if (!lastPos.Equals(curPos))
             {
                 c1.lastPos = curPos;
+                Console.WriteLine("RJ BUILD CHUNK GRID");
                 BuiildChunkGrid(lastPos, ChunkSize, commandBuffer, index);
             }
         }

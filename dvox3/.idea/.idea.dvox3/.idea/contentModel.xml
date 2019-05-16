@@ -8,11 +8,16 @@
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
         <e p="Components" t="Include">
+          <e p="BlockInvisible.cs" t="Include" />
+          <e p="BlockTagComponent.cs" t="Include" />
+          <e p="ChunkBufferData.cs" t="Include" />
           <e p="ChunkFinishedGenerate.cs" t="Include" />
           <e p="ChunkGenerator.cs" t="Include" />
           <e p="ChunkPendingGenerate.cs" t="Include" />
+          <e p="ChunkPosition.cs" t="Include" />
           <e p="EmptyRJTestComponent.cs" t="Include" />
           <e p="EntityPrefabComponent.cs" t="Include" />
+          <e p="MeshTagComponent.cs" t="Include" />
         </e>
         <e p="HelloECS" t="Include">
           <e p="RotationSpeedAuthoring_ForEach.cs" t="Include" />
@@ -26,8 +31,8 @@
           <e p="MeshHack.cs" t="Include" />
         </e>
         <e p="Systems" t="Include">
-          <e p="BlockTagComponent.cs" t="Include" />
           <e p="BlockVisibleJobSystem.cs" t="Include" />
+          <e p="ChunkBuildMeshJS.cs" t="Include" />
           <e p="ChunkGenerateJS.cs" t="Include" />
           <e p="ChunkMarkGenerateJS.cs" t="Include" />
         </e>

@@ -4,5 +4,7 @@ using Unity.Entities;
 using Unity.Mathematics;
 using UnityEngine;
 
-public struct ChunkPendingGenerate : IComponentData
-{}
+public struct ChunkPosition : IComponentData
+{
+    public float3 pos;
+}
