@@ -15,7 +15,7 @@ public class ChunkMarkGenerateJS : JobComponentSystem
 {
     //public static Dictionary<float3, int> chunks = new Dictionary<float3, int>();
     public static Dictionary<float3, int> chunks;
-    public static readonly float generationDistance = 256.0f;
+    public static readonly float generationDistance = 256.0f / 4.0f;
     public static readonly float generationDistanceSquared = generationDistance * generationDistance;
     public static readonly int ChunkSize = 16;
     
@@ -91,6 +91,7 @@ public class ChunkMarkGenerateJS : JobComponentSystem
         ecb.AddComponent(index, entity, pending);
         ecb.AddComponent(index, entity, position);
         ecb.AddBuffer<ChunkBufferData>(index, entity);
+        ecb.AddBuffer<ChunkBufferBlockToCreateData>(index, entity);
         return entity.Index;
     }
     

@@ -171,16 +171,20 @@ public class ChunkBuildMeshJS : JobComponentSystem
     
     struct ChunkBuildMeshJob : IJobForEachWithEntity<ChunkPosition, ChunkFinishedGenerate>
     {
-        [ReadOnly]
         public EntityCommandBuffer.Concurrent commandBuffer;
+
         public int ChunkSize;
         
         [NativeDisableParallelForRestriction]
         public BufferFromEntity<ChunkBufferData> cbd;
 
+        [NativeDisableParallelForRestriction]
+        public BufferFromEntity<ChunkBufferBlockToCreateData> cbdOut;
+        
         public void Execute(Entity entity, int index, [ReadOnly] ref ChunkPosition chunkPos, [ReadOnly] ref ChunkFinishedGenerate chunk)
         {
             DynamicBuffer<ChunkBufferData> buffer = cbd[entity];
+            DynamicBuffer<ChunkBufferBlockToCreateData> bufferOut = cbdOut[entity];
             
             for (int x = 0; x < ChunkSize; x++)
             {
@@ -191,6 +195,9 @@ public class ChunkBuildMeshJS : JobComponentSystem
                         int idx = FlattenToIdx(x, y, z, ChunkSize);
                         short id = buffer[idx].blockId;
 
+                        if (id == -1)
+                            continue;
+                        
                         var pos = chunkPos.pos;
                         pos.x += x;
                         pos.y += y;
@@ -230,28 +237,44 @@ public class ChunkBuildMeshJS : JobComponentSystem
 
                         if (visible)
                         {
-                            CreateBlockEntity(id, pos, commandBuffer, index);
+            //                bufferOut.Add(new ChunkBufferBlockToCreateData { blockId = id, position = pos});
+                            
+                            var ent = commandBuffer.Instantiate(index, blockPrefab[id]);
+                            var translation = new Translation { Value = pos };
+                            commandBuffer.SetComponent(index, ent, translation);
                         }
                     }
                 }
-                
             }
             
-            
-            commandBuffer.RemoveComponent<ChunkFinishedGenerate>(index,entity);
+            commandBuffer.RemoveComponent<ChunkFinishedGenerate>(index, entity);
         }
     }
     
-    private static void CreateBlockEntity(short id, float3 worldPos, EntityCommandBuffer.Concurrent ecb, int index)
+    struct ChunkBuildMeshAfterJob : IJobForEachWithEntity<ChunkPosition, ChunkFinishedGenerate>
     {
-        if (id == -1)
-            return; //Dont generate air blocks.
+        public EntityCommandBuffer.Concurrent commandBuffer;
+        
+        [ReadOnly]
+        [NativeDisableParallelForRestriction]
+        public BufferFromEntity<ChunkBufferBlockToCreateData> cbd;
+        
+        public void Execute(Entity entity, int index, [ReadOnly] ref ChunkPosition chunkPos, [ReadOnly] ref ChunkFinishedGenerate chunk)
+        {
+            DynamicBuffer<ChunkBufferBlockToCreateData> buffer = cbd[entity];
 
-        var entity = ecb.Instantiate(index, blockPrefab[id]);
-        var translation = new Translation { Value = worldPos };
-        ecb.SetComponent(index, entity, translation);
+            for (int i = 0; i < buffer.Length; ++i)
+            {
+                var e = buffer[i];
+
+                var ent = commandBuffer.Instantiate(index, blockPrefab[e.blockId]);
+                var translation = new Translation { Value = chunkPos.pos };
+                commandBuffer.SetComponent(index, ent, translation);
+            }
+            commandBuffer.RemoveComponent<ChunkFinishedGenerate>(index, entity);
+        }
     }
-
+    
     protected override void OnCreate()
     {
         ecbSystem = World.GetOrCreateSystem<BeginSimulationEntityCommandBufferSystem>();
@@ -279,14 +302,24 @@ public class ChunkBuildMeshJS : JobComponentSystem
 
     protected override JobHandle OnUpdate(JobHandle inputDeps)
     {
-        var job = new ChunkBuildMeshJob()
+        var job = new ChunkBuildMeshJob
         {
             commandBuffer = ecbSystem.CreateCommandBuffer().ToConcurrent(),
             ChunkSize = ChunkMarkGenerateJS.ChunkSize,
-            cbd = GetBufferFromEntity<ChunkBufferData>()
+            cbd = GetBufferFromEntity<ChunkBufferData>(),
+            cbdOut = GetBufferFromEntity<ChunkBufferBlockToCreateData>()
         };
         var handle = job.Schedule(this, inputDeps);
+        
+//        var jobAfter = new ChunkBuildMeshAfterJob
+//        {
+//            commandBuffer = ecbSystem.CreateCommandBuffer().ToConcurrent(),
+//            cbd = GetBufferFromEntity<ChunkBufferBlockToCreateData>()
+//        };
+//        handle = jobAfter.Schedule(this, handle);
+        
         ecbSystem.AddJobHandleForProducer(handle);
+
         return handle;
     }
 }
