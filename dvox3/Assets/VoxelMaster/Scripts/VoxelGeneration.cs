@@ -77,7 +77,7 @@ namespace VoxelMaster
                 StartCoroutine(UpdateGeneration());
             cubeRenderMesh = new RenderMesh()
             {
-               mesh      =  cubeMesh,
+                mesh      =  cubeMesh,
                 material =  cubeMaterial
             };
             

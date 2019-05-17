@@ -10,42 +10,10 @@ using UnityEngine;
 public class ChunkGenerateJS : JobComponentSystem
 {
     BeginInitializationEntityCommandBufferSystem ecbSystem;
-    static RenderMesh cubeRenderMesh;
-    static Entity blockPrefab;
-
-    private static Mesh GetCubeMesh()
-    {
-        var go = GameObject.CreatePrimitive(PrimitiveType.Cube);
-        var mesh = go.GetComponent<MeshFilter>().sharedMesh;
-        GameObject.Destroy(go);
-        return mesh;
-    }
-
-    private static Material GetCubeMaterial()
-    {
-        return Resources.Load("cubeMaterial", typeof(Material)) as Material;
-    }
     
     protected override void OnCreate()
     {
         ecbSystem = World.GetOrCreateSystem<BeginInitializationEntityCommandBufferSystem>();
-        cubeRenderMesh = new RenderMesh
-        {
-            mesh = GetCubeMesh(),
-            material = GetCubeMaterial()
-        };
-
-        EntityArchetype arch;
-        
-        EntityManager em = ecbSystem.EntityManager;
-        blockPrefab = em.CreateEntity();
-        em.AddSharedComponentData(blockPrefab, cubeRenderMesh);
-        em.AddComponentData(blockPrefab, new Rotation { Value = Quaternion.identity });
-        em.AddComponentData(blockPrefab, new LocalToWorld());
-        em.AddComponentData(blockPrefab, new BlockTagComponent());
-        em.AddComponentData(blockPrefab, new Translation { Value = float3.zero});
-       // em.AddComponentData(blockPrefab, new BlockInvisible());
-       // em.AddComponentData(blockPrefab, new Disabled());
     }
 
     private static float Remap(float value, float iMin, float iMax, float oMin, float oMax) // A remap function to help you in your procedural generation.
@@ -125,17 +93,6 @@ public class ChunkGenerateJS : JobComponentSystem
         }
     }
 
-    private static void CreateBlockEntity(short id, float3 worldPos, EntityCommandBuffer.Concurrent ecb, int index)
-    {
-        if (id == -1)
-            return; //Dont generate air blocks.
-
-        var entity = ecb.Instantiate(index, blockPrefab);
-        var translation = new Translation() { Value = worldPos };
-        ecb.SetComponent(index, entity, translation);
-
-    }
-    
     struct GenerateChunkJob : IJobForEachWithEntity<ChunkPosition, ChunkPendingGenerate>
     {
         public EntityCommandBuffer.Concurrent commandBuffer;
@@ -153,7 +110,7 @@ public class ChunkGenerateJS : JobComponentSystem
                     {
                         short id = GenerateBlock(chunkPos, x, y, z);
                         DynamicBuffer<ChunkBufferData> buffer = cbd[e];
-                        buffer.Add(new ChunkBufferData() { blockId=id });
+                        buffer.Add(new ChunkBufferData() { blockId = id });
                     
                         //int idx = x + (y * ChunkSize) + (z * ChunkSize * ChunkSize);
                         

@@ -16,8 +16,8 @@ public class ChunkBuildMeshJS : JobComponentSystem
 {
     
     BeginSimulationEntityCommandBufferSystem ecbSystem;
-    static Entity blockPrefab;
-    static RenderMesh cubeRenderMesh;
+    static Entity[] blockPrefab;
+    
     static Mesh cubeMesh = null;
     static int TILEING = 16;
     static float UVPADDING = 0f;
@@ -108,9 +108,20 @@ public class ChunkBuildMeshJS : JobComponentSystem
 //        return mesh;
     }
 
-    private static Material GetCubeMaterial()
+    private static Material GetCubeMaterial(short id)
     {
-        return Resources.Load("grass", typeof(Material)) as Material;
+        switch (id)
+        {
+            case 0: return Resources.Load("grass", typeof(Material)) as Material;
+            case 1: return Resources.Load("stone", typeof(Material)) as Material;
+            case 2: return Resources.Load("dirt", typeof(Material)) as Material;
+            case 3: return Resources.Load("sand", typeof(Material)) as Material;
+            case 4: return Resources.Load("bedrock", typeof(Material)) as Material;
+            case 5: return Resources.Load("wood", typeof(Material)) as Material;
+            case 6: return Resources.Load("leaves", typeof(Material)) as Material;
+        }
+
+        return Resources.Load("cubeMaterial", typeof(Material)) as Material;        
     }
 
     private static Vector2[] GetUVs(int id)
@@ -236,8 +247,8 @@ public class ChunkBuildMeshJS : JobComponentSystem
         if (id == -1)
             return; //Dont generate air blocks.
 
-        var entity = ecb.Instantiate(index, blockPrefab);
-        var translation = new Translation() { Value = worldPos };
+        var entity = ecb.Instantiate(index, blockPrefab[id]);
+        var translation = new Translation { Value = worldPos };
         ecb.SetComponent(index, entity, translation);
     }
 
@@ -245,20 +256,25 @@ public class ChunkBuildMeshJS : JobComponentSystem
     {
         ecbSystem = World.GetOrCreateSystem<BeginSimulationEntityCommandBufferSystem>();
         
-        cubeRenderMesh = new RenderMesh
-        {
-            mesh = GetCubeMesh(),
-            material = GetCubeMaterial()
-            
-        };
-          
         EntityManager em = ecbSystem.EntityManager;
-        blockPrefab = em.CreateEntity();
-        em.AddSharedComponentData(blockPrefab, cubeRenderMesh);
-        em.AddComponentData(blockPrefab, new Rotation { Value = Quaternion.identity });
-        em.AddComponentData(blockPrefab, new LocalToWorld());
-        em.AddComponentData(blockPrefab, new BlockTagComponent());
-        em.AddComponentData(blockPrefab, new Translation { Value = float3.zero});
+
+        blockPrefab = new Entity[10];
+
+        for (short i = 0; i < 10; ++i)
+        {
+            var prefab = em.CreateEntity();
+            em.AddSharedComponentData(prefab, new RenderMesh
+            {
+                mesh = GetCubeMesh(),
+                material = GetCubeMaterial(i)
+            });
+            em.AddComponentData(prefab, new Rotation {Value = Quaternion.identity});
+            em.AddComponentData(prefab, new LocalToWorld());
+            em.AddComponentData(prefab, new BlockTagComponent());
+            em.AddComponentData(prefab, new Translation {Value = float3.zero});
+
+            blockPrefab[i] = prefab;
+        }
     }
 
     protected override JobHandle OnUpdate(JobHandle inputDeps)
