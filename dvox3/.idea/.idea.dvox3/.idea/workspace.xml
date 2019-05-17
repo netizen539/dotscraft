@@ -3,16 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="8e691b28-0531-4574-9814-9347d3e6aede" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.dvox3/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.dvox3/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.dvox3/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.dvox3/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.dvox3/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.dvox3/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.dvox3/riderModule.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.dvox3/riderModule.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Components/ChunkPendingGenerate.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Components/ChunkPendingGenerate.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Systems/BlockTagComponent.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Systems/BlockTagComponent.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Systems/BlockVisibleJobSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Systems/BlockVisibleJobSystem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Systems/ChunkGenerateJS.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Systems/ChunkGenerateJS.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Systems/ChunkMarkGenerateJS.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Systems/ChunkMarkGenerateJS.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/VoxelMaster/Materials/terrain.mat.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/VoxelMaster/Materials/terrain.mat.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MeshHack.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MeshHack.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Systems/ChunkBuildMeshJS.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Systems/ChunkBuildMeshJS.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VoxelMaster/Editor/BlockInfoEditor.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VoxelMaster/Editor/BlockInfoEditor.cs.meta" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -24,38 +19,58 @@
     <window id="1">
       <content type="file-editors">
         <state>
-          <leaf>
+          <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
             <file pinned="false" current-in-tab="true">
               <entry file="file://$PROJECT_DIR$/Assets/Systems/ChunkBuildMeshJS.cs">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="506">
-                    <caret line="53" column="5" lean-forward="true" selection-start-line="53" selection-start-column="5" selection-end-line="53" selection-end-column="5" />
+                  <state relative-caret-position="484">
+                    <caret line="34" selection-start-line="34" selection-end-line="34" />
                     <folding>
-                      <marker date="1558050253288" expanded="true" signature="6:296" ph="..." />
-                      <marker date="1558050253288" expanded="true" signature="348:6679" ph="{...}" />
-                      <marker date="1558050253288" expanded="true" signature="552:838" ph="{...}" />
-                      <marker date="1558050253288" expanded="true" signature="582:802" ph="{...}" />
-                      <marker date="1558050253288" expanded="true" signature="885:974" ph="{...}" />
-                      <marker date="1558050253288" expanded="true" signature="1047:1394" ph="{...}" />
-                      <marker date="1558050253288" expanded="true" signature="1490:4878" ph="{...}" />
-                      <marker date="1558050253288" expanded="true" signature="1853:4872" ph="{...}" />
-                      <marker date="1558050253288" expanded="true" signature="1941:2291" ph="/* for (int i = 0; i &lt; buffer.Length; i++) ... */" />
-                      <marker date="1558050253288" expanded="true" signature="2365:4756" ph="{...}" />
-                      <marker date="1558050253288" expanded="true" signature="2431:4725" ph="{...}" />
-                      <marker date="1558050253288" expanded="true" signature="2505:4707" ph="{...}" />
-                      <marker date="1558050253288" expanded="true" signature="2970:3252" ph="/* int tidx = FlattenToIdx(x, y + 1, z, ChunkSize); ... */" />
-                      <marker date="1558050253288" expanded="true" signature="3334:4517" ph="{...}" />
-                      <marker date="1558050253288" expanded="true" signature="3421:4491" ph="{...}" />
-                      <marker date="1558050253288" expanded="true" signature="3516:4461" ph="{...}" />
-                      <marker date="1558050253288" expanded="true" signature="3905:4087" ph="/* When tidx is 1, that means we've on a this chunk's border. We dont ... */" />
-                      <marker date="1558050253288" expanded="true" signature="4248:4427" ph="{...}" />
-                      <marker date="1558050253288" expanded="true" signature="4555:4685" ph="{...}" />
-                      <marker date="1558050253288" expanded="true" signature="4999:5332" ph="{...}" />
-                      <marker date="1558050253288" expanded="true" signature="5372:6224" ph="{...}" />
-                      <marker date="1558050253288" expanded="true" signature="5525:5624" ph="{...}" />
-                      <marker date="1558050253288" expanded="true" signature="6100:6218" ph="/* em.AddComponentData(blockPrefab, new BlockInvisible()); ... */" />
-                      <marker date="1558050253288" expanded="true" signature="6288:6677" ph="{...}" />
-                      <marker date="1558050253288" expanded="true" signature="6345:6544" ph="{...}" />
+                      <marker date="1558116026513" expanded="false" signature="6:296" ph="..." />
+                      <marker date="1558116026513" expanded="true" signature="348:9050" ph="{...}" />
+                      <marker date="1558116026513" expanded="true" signature="617:2812" ph="{...}" />
+                      <marker date="1558116026513" expanded="true" signature="647:867" ph="{...}" />
+                      <marker date="1558116026513" expanded="true" signature="869:1226" ph="/* List&lt;Vector2&gt; uvs = new List&lt;Vector2&gt;(); ... */" />
+                      <marker date="1558116026513" expanded="true" signature="1253:2806" ph="/* var mesh = new Mesh(); ... */" />
+                      <marker date="1558116026513" expanded="true" signature="2859:2943" ph="{...}" />
+                      <marker date="1558116026513" expanded="true" signature="2988:4037" ph="{...}" />
+                      <marker date="1558116026513" expanded="true" signature="3182:3892" ph="{...}" />
+                      <marker date="1558116026513" expanded="true" signature="3237:3882" ph="{...}" />
+                      <marker date="1558116026513" expanded="true" signature="3302:3868" ph="{...}" />
+                      <marker date="1558116026513" expanded="true" signature="4114:4461" ph="{...}" />
+                      <marker date="1558116026513" expanded="true" signature="4557:7447" ph="{...}" />
+                      <marker date="1558116026513" expanded="true" signature="4920:7441" ph="{...}" />
+                      <marker date="1558116026513" expanded="true" signature="5056:7325" ph="{...}" />
+                      <marker date="1558116026513" expanded="true" signature="5122:7294" ph="{...}" />
+                      <marker date="1558116026513" expanded="true" signature="5196:7276" ph="{...}" />
+                      <marker date="1558116026513" expanded="true" signature="5629:7086" ph="{...}" />
+                      <marker date="1558116026513" expanded="true" signature="5716:7060" ph="{...}" />
+                      <marker date="1558116026513" expanded="true" signature="5811:7030" ph="{...}" />
+                      <marker date="1558116026513" expanded="true" signature="6167:6349" ph="/* When tidx is 1, that means we've on a this chunk's border. We dont ... */" />
+                      <marker date="1558116026513" expanded="true" signature="6401:6580" ph="{...}" />
+                      <marker date="1558116026513" expanded="true" signature="6817:6996" ph="{...}" />
+                      <marker date="1558116026513" expanded="true" signature="7124:7254" ph="{...}" />
+                      <marker date="1558116026513" expanded="true" signature="7568:7829" ph="{...}" />
+                      <marker date="1558116026513" expanded="true" signature="7869:8595" ph="{...}" />
+                      <marker date="1558116026513" expanded="true" signature="8022:8121" ph="{...}" />
+                      <marker date="1558116026513" expanded="true" signature="8659:9048" ph="{...}" />
+                      <marker date="1558116026513" expanded="true" signature="8716:8915" ph="{...}" />
+                    </folding>
+                  </state>
+                </provider>
+              </entry>
+            </file>
+            <file pinned="false" current-in-tab="false">
+              <entry file="file://$PROJECT_DIR$/Assets/Scripts/MeshHack.cs">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="660">
+                    <caret line="33" lean-forward="true" selection-start-line="33" selection-end-line="33" />
+                    <folding>
+                      <marker date="1558115581439" expanded="false" signature="6:97" ph="..." />
+                      <marker date="1558115581439" expanded="true" signature="136:733" ph="{...}" />
+                      <marker date="1558115581439" expanded="true" signature="348:426" ph="{...}" />
+                      <marker date="1558115581439" expanded="true" signature="484:505" ph="{...}" />
+                      <marker date="1558115581439" expanded="true" signature="577:731" ph="{...}" />
                     </folding>
                   </state>
                 </provider>
@@ -80,10 +95,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assets/Systems/ChunkGenerateJS.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2024">
-              <caret line="162" column="21" lean-forward="true" selection-start-line="162" selection-start-column="21" selection-end-line="162" selection-end-column="21" />
+            <state relative-caret-position="1826">
+              <caret line="162" column="21" selection-start-line="162" selection-start-column="21" selection-end-line="162" selection-end-column="21" />
               <folding>
-                <marker date="1558047836433" expanded="true" signature="6:174" ph="..." />
+                <marker date="1558047836433" expanded="false" signature="6:174" ph="..." />
                 <marker date="1558047836433" expanded="true" signature="225:7235" ph="{...}" />
                 <marker date="1558047836433" expanded="true" signature="395:586" ph="{...}" />
                 <marker date="1558047836433" expanded="true" signature="633:722" ph="{...}" />
@@ -91,7 +106,7 @@
                 <marker date="1558047836433" expanded="true" signature="914:1000" ph="{...}" />
                 <marker date="1558047836433" expanded="true" signature="1505:1623" ph="/* em.AddComponentData(blockPrefab, new BlockInvisible()); ... */" />
                 <marker date="1558047836433" expanded="true" signature="1785:1874" ph="{...}" />
-                <marker date="1558047836433" expanded="false" signature="1966:4921" ph="{...}" />
+                <marker date="1558047836433" expanded="true" signature="1966:4921" ph="{...}" />
                 <marker date="1558047836433" expanded="true" signature="3747:4145" ph="{...}" />
                 <marker date="1558047836433" expanded="true" signature="4180:4827" ph="{...}" />
                 <marker date="1558047836433" expanded="true" signature="4256:4462" ph="{...}" />
@@ -114,21 +129,278 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Assets/VoxelMaster/Scripts/Chunk.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="7568">
+              <caret line="375" column="54" selection-start-line="375" selection-start-column="54" selection-end-line="375" selection-end-column="54" />
+              <folding>
+                <marker date="1557870838157" expanded="false" signature="6:264" ph="..." />
+                <marker date="1557870838157" expanded="true" signature="287:18818" ph="{...}" />
+                <marker date="1557870838157" expanded="true" signature="338:18816" ph="{...}" />
+                <marker date="1557870838157" expanded="true" signature="429:519" ph="/// The voxel terrain attached to this chunk. ... " />
+                <marker date="1557870838157" expanded="true" signature="554:959" ph="{...}" />
+                <marker date="1557870838157" expanded="true" signature="580:640" ph="{...}" />
+                <marker date="1557870838157" expanded="true" signature="656:949" ph="{...}" />
+                <marker date="1557870838157" expanded="true" signature="748:935" ph="{...}" />
+                <marker date="1557870838157" expanded="true" signature="968:1056" ph="/// The attached Game Object to this chunk. ... " />
+                <marker date="1557870838157" expanded="true" signature="1124:1185" ph="/// The chunk ID ... " />
+                <marker date="1557870838157" expanded="true" signature="1238:1309" ph="/// The size of the chunk. ... " />
+                <marker date="1557870838157" expanded="true" signature="1364:1448" ph="/// The amount of blocks in this chunk. ... " />
+                <marker date="1557870838157" expanded="true" signature="1473:2009" ph="{...}" />
+                <marker date="1557870838157" expanded="true" signature="1499:1999" ph="{...}" />
+                <marker date="1557870838157" expanded="true" signature="1611:1950" ph="{...}" />
+                <marker date="1557870838157" expanded="true" signature="1695:1932" ph="{...}" />
+                <marker date="1557870838157" expanded="true" signature="1787:1910" ph="{...}" />
+                <marker date="1557870838157" expanded="true" signature="2018:2097" ph="/// The X coordinate of the chunk. ... " />
+                <marker date="1557870838157" expanded="true" signature="2141:2220" ph="/// The Y coordinate of the chunk. ... " />
+                <marker date="1557870838157" expanded="true" signature="2264:2343" ph="/// The Z coordinate of the chunk. ... " />
+                <marker date="1557870838157" expanded="true" signature="2387:2462" ph="/// The position of the chunk. ... " />
+                <marker date="1557870838157" expanded="true" signature="2489:2598" ph="{...}" />
+                <marker date="1557870838157" expanded="true" signature="2515:2588" ph="{...}" />
+                <marker date="1557870838157" expanded="true" signature="2646:2730" ph="/// Determines if the chunk is visible. ... " />
+                <marker date="1557870838157" expanded="true" signature="2758:3110" ph="{...}" />
+                <marker date="1557870838157" expanded="true" signature="2784:2845" ph="{...}" />
+                <marker date="1557870838157" expanded="true" signature="2861:3100" ph="{...}" />
+                <marker date="1557870838157" expanded="true" signature="3119:3235" ph="/// Gets if the chunk is dirty or modified since it was last refreshed. ... " />
+                <marker date="1557870838157" expanded="true" signature="3292:3380" ph="/// Determines if the chunk needs batching. ... " />
+                <marker date="1557870838157" expanded="true" signature="3655:4013" ph="/// Creates a new chunk without its terrain. (Please create chunks using the terrain instead) ... " />
+                <marker date="1557870838157" expanded="true" signature="4065:4778" ph="{...}" />
+                <marker date="1557870838157" expanded="true" signature="4787:4859" ph="/// Clears the whole chunk. ... " />
+                <marker date="1557870838157" expanded="true" signature="4887:5324" ph="{...}" />
+                <marker date="1557870838157" expanded="true" signature="4955:5239" ph="{...}" />
+                <marker date="1557870838157" expanded="true" signature="5031:5225" ph="{...}" />
+                <marker date="1557870838157" expanded="true" signature="5115:5207" ph="{...}" />
+                <marker date="1557870838157" expanded="true" signature="5333:5400" ph="/// Deletes the chunk. ... " />
+                <marker date="1557870838157" expanded="true" signature="5429:5817" ph="{...}" />
+                <marker date="1557870838157" expanded="true" signature="5471:5655" ph="{...}" />
+                <marker date="1557870838157" expanded="true" signature="5826:6165" ph="/// Gets the block at the specified position. ... " />
+                <marker date="1557870838157" expanded="true" signature="6216:6501" ph="{...}" />
+                <marker date="1557870838157" expanded="true" signature="6510:6846" ph="/// Gets the block ID at the specified position. ... " />
+                <marker date="1557870838157" expanded="true" signature="6899:7230" ph="{...}" />
+                <marker date="1557870838157" expanded="true" signature="7239:7541" ph="/// Sets the block ID at the specified position. ... " />
+                <marker date="1557870838157" expanded="true" signature="7607:8055" ph="{...}" />
+                <marker date="1557870838157" expanded="true" signature="8064:8222" ph="/// Set the blocks of this chunk to the specified array. ... " />
+                <marker date="1557870838157" expanded="true" signature="8270:8666" ph="{...}" />
+                <marker date="1557870838157" expanded="true" signature="8387:8591" ph="{...}" />
+                <marker date="1557870838157" expanded="true" signature="8675:8760" ph="/// Refreshes this chunk if it is dirty. ... " />
+                <marker date="1557870838157" expanded="true" signature="8794:8886" ph="{...}" />
+                <marker date="1557870838157" expanded="true" signature="8895:8965" ph="///. ... " />
+                <marker date="1557870838157" expanded="true" signature="8995:9885" ph="{...}" />
+                <marker date="1557870838157" expanded="true" signature="9144:9316" ph="{...}" />
+                <marker date="1557870838157" expanded="true" signature="9389:9464" ph="/* int faceCount = 0; ... */" />
+                <marker date="1557870838157" expanded="true" signature="9763:9875" ph="/* Thread t = new Thread(() =&gt; GenerateEntities()); ... */" />
+                <marker date="1557870838157" expanded="true" signature="9986:16102" ph="{...}" />
+                <marker date="1557870838157" expanded="true" signature="10093:15932" ph="{...}" />
+                <marker date="1557870838157" expanded="true" signature="10154:15918" ph="{...}" />
+                <marker date="1557870838157" expanded="true" signature="10223:15900" ph="{...}" />
+                <marker date="1557870838157" expanded="true" signature="10332:10529" ph="{...}" />
+                <marker date="1557870838157" expanded="true" signature="11715:12026" ph="{...}" />
+                <marker date="1557870838157" expanded="true" signature="12138:12670" ph="{...}" />
+                <marker date="1557870838157" expanded="true" signature="12225:12522" ph="{...}" />
+                <marker date="1557870838157" expanded="true" signature="12704:13232" ph="{...}" />
+                <marker date="1557870838157" expanded="true" signature="12791:13085" ph="{...}" />
+                <marker date="1557870838157" expanded="true" signature="13266:13794" ph="{...}" />
+                <marker date="1557870838157" expanded="true" signature="13353:13647" ph="{...}" />
+                <marker date="1557870838157" expanded="true" signature="13829:14358" ph="{...}" />
+                <marker date="1557870838157" expanded="true" signature="13915:14210" ph="{...}" />
+                <marker date="1557870838157" expanded="true" signature="14391:14916" ph="{...}" />
+                <marker date="1557870838157" expanded="true" signature="14477:14770" ph="{...}" />
+                <marker date="1557870838157" expanded="true" signature="14952:15483" ph="{...}" />
+                <marker date="1557870838157" expanded="true" signature="15038:15334" ph="{...}" />
+                <marker date="1557870838157" expanded="true" signature="15580:15878" ph="{...}" />
+                <marker date="1557870838157" expanded="true" signature="15707:15850" ph="{...}" />
+                <marker date="1557870838157" expanded="true" signature="16188:16806" ph="{...}" />
+                <marker date="1557870838157" expanded="true" signature="16508:16725" ph="{...}" />
+                <marker date="1557870838157" expanded="true" signature="16580:16709" ph="{...}" />
+                <marker date="1557870838157" expanded="true" signature="16869:17590" ph="{...}" />
+                <marker date="1557870838157" expanded="true" signature="17631:18810" ph="{...}" />
+                <marker date="1557870838157" expanded="true" signature="17864:18641" ph="{...}" />
+                <marker date="1557870838157" expanded="true" signature="17927:18627" ph="{...}" />
+                <marker date="1557870838157" expanded="true" signature="18004:18609" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Assets/VoxelMaster/Scripts/VoxelTerrain.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1254">
+              <caret line="62" column="19" selection-start-line="62" selection-start-column="19" selection-end-line="62" selection-end-column="19" />
+              <folding>
+                <marker date="1557870838157" expanded="false" signature="6:114" ph="..." />
+                <marker date="1557870838157" expanded="true" signature="137:41974" ph="{...}" />
+                <marker date="1557870838157" expanded="true" signature="185:41972" ph="{...}" />
+                <marker date="1557870838157" expanded="true" signature="536:638" ph="/// The size of every chunk in units, 16 is a good value. ... " />
+                <marker date="1557870838157" expanded="true" signature="825:907" ph="/* The render distance of the chunk. ... */" />
+                <marker date="1557870838157" expanded="true" signature="1015:1098" ph="/// The dispose distance of the chunk. ... " />
+                <marker date="1557870838157" expanded="true" signature="1346:1550" ph="/// Ignores the Y axis for distance checking, if enabled, it can avoid underneath &amp; above chunks from suddenly di ... " />
+                <marker date="1557870838157" expanded="true" signature="1779:1907" ph="/// The interval between static batching operations (-1 to disable static batching) ... " />
+                <marker date="1557870838157" expanded="true" signature="2067:2157" ph="/// Should we enable colliders for the chunk? ... " />
+                <marker date="1557870838157" expanded="true" signature="2273:2350" ph="/// The block dictionary to use. ... " />
+                <marker date="1557870838157" expanded="true" signature="2600:2692" ph="/// The material to use along with its texture. ... " />
+                <marker date="1557870838157" expanded="true" signature="2800:2933" ph="/// The tiling of the material, for example, 16 will split the texture into 16x16 parts. ... " />
+                <marker date="1557870838157" expanded="true" signature="3080:3160" ph="/// The UV Padding of the textures. ... " />
+                <marker date="1557870838157" expanded="true" signature="3449:3603" ph="/// The dictionary of the chunks, please do not directly manipulate this dictionary, use the methods instead. ... " />
+                <marker date="1557870838157" expanded="true" signature="3697:3808" ph="/// Determines if the voxel terrain is dirty and needs refreshing. ... " />
+                <marker date="1557870838157" expanded="true" signature="3834:3976" ph="{...}" />
+                <marker date="1557870838157" expanded="true" signature="3860:3966" ph="{...}" />
+                <marker date="1557870838157" expanded="true" signature="3985:4088" ph="/// Determines if the voxel terrain is dirty for batching. ... " />
+                <marker date="1557870838157" expanded="true" signature="4119:4295" ph="{...}" />
+                <marker date="1557870838157" expanded="true" signature="4145:4285" ph="{...}" />
+                <marker date="1557870838157" expanded="true" signature="4352:4691" ph="/// Determines if a chunk is found at the specified position. ... " />
+                <marker date="1557870838157" expanded="true" signature="4744:5076" ph="{...}" />
+                <marker date="1557870838157" expanded="true" signature="5085:5319" ph="/// Determines if a chunk is found at the specified position. ... " />
+                <marker date="1557870838157" expanded="true" signature="5364:5832" ph="{...}" />
+                <marker date="1557870838157" expanded="true" signature="5841:6164" ph="/// Gets the chunk at the specified position. ... " />
+                <marker date="1557870838157" expanded="true" signature="6216:6540" ph="{...}" />
+                <marker date="1557870838157" expanded="true" signature="6549:6767" ph="/// Gets the chunk at the specified position. ... " />
+                <marker date="1557870838157" expanded="true" signature="6811:7271" ph="{...}" />
+                <marker date="1557870838157" expanded="true" signature="7280:7657" ph="/// Gets the chunk at the specified position, if it doesn't exist, it creates a new chunk. ... " />
+                <marker date="1557870838157" expanded="true" signature="7717:8194" ph="{...}" />
+                <marker date="1557870838157" expanded="true" signature="8203:8475" ph="/// Gets the chunk at the specified position, if it doesn't exist, it creates a new chunk. ... " />
+                <marker date="1557870838157" expanded="true" signature="8527:9140" ph="{...}" />
+                <marker date="1557870838157" expanded="true" signature="9149:9450" ph="/// Creates a new chunk at this position. ... " />
+                <marker date="1557870838157" expanded="true" signature="9504:9645" ph="{...}" />
+                <marker date="1557870838157" expanded="true" signature="9654:9849" ph="/// Creates a new chunk at this position. ... " />
+                <marker date="1557870838157" expanded="true" signature="9895:10377" ph="{...}" />
+                <marker date="1557870838157" expanded="true" signature="10386:10636" ph="/// Deletes a chunk at the specified position. ... " />
+                <marker date="1557870838157" expanded="true" signature="10689:10835" ph="{...}" />
+                <marker date="1557870838157" expanded="true" signature="10844:10989" ph="/// Deletes a chunk at the specified position. ... " />
+                <marker date="1557870838157" expanded="true" signature="11034:11521" ph="{...}" />
+                <marker date="1557870838157" expanded="true" signature="11531:11606" ph="/// Clears the entire terrain. ... " />
+                <marker date="1557870838157" expanded="true" signature="11634:12159" ph="{...}" />
+                <marker date="1557870838157" expanded="true" signature="11766:11967" ph="{...}" />
+                <marker date="1557870838157" expanded="true" signature="12168:12506" ph="/// Gets the block at the specified position ... " />
+                <marker date="1557870838157" expanded="true" signature="12557:12760" ph="{...}" />
+                <marker date="1557870838157" expanded="true" signature="12769:13002" ph="/// Gets the block at the specified position ... " />
+                <marker date="1557870838157" expanded="true" signature="13045:13384" ph="{...}" />
+                <marker date="1557870838157" expanded="true" signature="13393:13735" ph="/// Gets the block ID at the specified position. ... " />
+                <marker date="1557870838157" expanded="true" signature="13788:13993" ph="{...}" />
+                <marker date="1557870838157" expanded="true" signature="14002:14239" ph="/// Gets the block ID at the specified position. ... " />
+                <marker date="1557870838157" expanded="true" signature="14284:14625" ph="{...}" />
+                <marker date="1557870838157" expanded="true" signature="14634:14936" ph="/// Sets the block ID at the specified position. ... " />
+                <marker date="1557870838157" expanded="true" signature="14998:15533" ph="{...}" />
+                <marker date="1557870838157" expanded="true" signature="15151:15465" ph="{...}" />
+                <marker date="1557870838157" expanded="true" signature="15542:15739" ph="/// Sets the block ID at the specified position. ... " />
+                <marker date="1557870838157" expanded="true" signature="15793:16464" ph="{...}" />
+                <marker date="1557870838157" expanded="true" signature="16082:16396" ph="{...}" />
+                <marker date="1557870838157" expanded="true" signature="16473:16783" ph="/// Removes the block at the specified position. Hint: It's a shortcut of doing &quot;SetBlockID(x, y, z, -1);&quot; ... " />
+                <marker date="1557870838157" expanded="true" signature="16838:16895" ph="{...}" />
+                <marker date="1557870838157" expanded="true" signature="16904:17105" ph="/// Removes the block at the specified position. Hint: It's a shortcut of doing &quot;SetBlockID(pos, -1);&quot; ... " />
+                <marker date="1557870838157" expanded="true" signature="17152:17205" ph="{...}" />
+                <marker date="1557870838157" expanded="true" signature="17215:17576" ph="/// Determines if a block exists at the specified position. ... " />
+                <marker date="1557870838157" expanded="true" signature="17631:17697" ph="{...}" />
+                <marker date="1557870838157" expanded="true" signature="17706:17962" ph="/// Determines if a block exists at the specified position. ... " />
+                <marker date="1557870838157" expanded="true" signature="18009:18211" ph="{...}" />
+                <marker date="1557870838157" expanded="true" signature="18220:18600" ph="/// Determines if the block is visible at the specified position (Does not check if block exists) ... " />
+                <marker date="1557870838157" expanded="true" signature="18656:19084" ph="{...}" />
+                <marker date="1557870838157" expanded="true" signature="19093:19368" ph="/// Determines if the block is visible at the specified position (Does not check if block exists) ... " />
+                <marker date="1557870838157" expanded="true" signature="19416:19980" ph="{...}" />
+                <marker date="1557870838157" expanded="true" signature="19989:20376" ph="/// Determines if the block is the ground and therefore walkable at the specified position. ... " />
+                <marker date="1557870838157" expanded="true" signature="20431:20609" ph="{...}" />
+                <marker date="1557870838157" expanded="true" signature="20618:20900" ph="/// Determines if the block is the ground and therefore walkable at the specified position. ... " />
+                <marker date="1557870838157" expanded="true" signature="20947:21261" ph="{...}" />
+                <marker date="1557870838157" expanded="true" signature="21270:21637" ph="/// Determines if the block can be used as a wall / is a wall. ... " />
+                <marker date="1557870838157" expanded="true" signature="21690:22069" ph="{...}" />
+                <marker date="1557870838157" expanded="true" signature="22078:22340" ph="/// Determines if the block can be used as a wall / is a wall. ... " />
+                <marker date="1557870838157" expanded="true" signature="22385:22900" ph="{...}" />
+                <marker date="1557870838157" expanded="true" signature="22909:23267" ph="/// Determines if the block can be used as ceiling / is a ceiling. ... " />
+                <marker date="1557870838157" expanded="true" signature="23323:23507" ph="{...}" />
+                <marker date="1557870838157" expanded="true" signature="23516:23769" ph="/// Determines if the block can be used as ceiling / is a ceiling. ... " />
+                <marker date="1557870838157" expanded="true" signature="23817:24137" ph="{...}" />
+                <marker date="1557870838157" expanded="true" signature="24147:24438" ph="/// Fills all blocks between position &quot;a&quot; and &quot;b&quot; with the specified block ID. ... " />
+                <marker date="1557870838157" expanded="true" signature="24495:25441" ph="{...}" />
+                <marker date="1557870838157" expanded="true" signature="25138:25431" ph="{...}" />
+                <marker date="1557870838157" expanded="true" signature="25218:25417" ph="{...}" />
+                <marker date="1557870838157" expanded="true" signature="25306:25399" ph="{...}" />
+                <marker date="1557870838157" expanded="true" signature="25450:25760" ph="/// Fills a sphere of blocks at the specified position &amp; radius. ... " />
+                <marker date="1557870838157" expanded="true" signature="25822:26668" ph="{...}" />
+                <marker date="1557870838157" expanded="true" signature="25861:26022" ph="{...}" />
+                <marker date="1557870838157" expanded="true" signature="26220:26658" ph="{...}" />
+                <marker date="1557870838157" expanded="true" signature="26290:26644" ph="{...}" />
+                <marker date="1557870838157" expanded="true" signature="26368:26626" ph="{...}" />
+                <marker date="1557870838157" expanded="true" signature="26478:26604" ph="{...}" />
+                <marker date="1557870838157" expanded="true" signature="26678:27008" ph="/// Gets the chunks within a certain range at the specified position. ... " />
+                <marker date="1557870838157" expanded="true" signature="27070:27499" ph="{...}" />
+                <marker date="1557870838157" expanded="true" signature="27243:27447" ph="{...}" />
+                <marker date="1557870838157" expanded="true" signature="27508:27839" ph="/// Gets the chunks within a certain range at the specified position. ... " />
+                <marker date="1557870838157" expanded="true" signature="27899:28364" ph="{...}" />
+                <marker date="1557870838157" expanded="true" signature="28108:28312" ph="{...}" />
+                <marker date="1557870838157" expanded="true" signature="28374:28531" ph="/// Refreshes the whole terrain, to be used ONLY when you want to really force it, it is an expensive operation. ... " />
+                <marker date="1557870838157" expanded="true" signature="28561:29058" ph="{...}" />
+                <marker date="1557870838157" expanded="true" signature="28689:28861" ph="{...}" />
+                <marker date="1557870838157" expanded="true" signature="28978:29048" ph="{...}" />
+                <marker date="1557870838157" expanded="true" signature="29067:29180" ph="/// Refreshes only the chunks that are considered &quot;dirty&quot; (Modified) ... " />
+                <marker date="1557870838157" expanded="true" signature="29214:29715" ph="{...}" />
+                <marker date="1557870838157" expanded="true" signature="29342:29514" ph="{...}" />
+                <marker date="1557870838157" expanded="true" signature="29631:29705" ph="{...}" />
+                <marker date="1557870838157" expanded="true" signature="29725:29913" ph="/// Prepares all chunks for static batching, somewhat expensive operation, this method executes Batch() but only  ... " />
+                <marker date="1557870838157" expanded="true" signature="29945:30002" ph="{...}" />
+                <marker date="1557870838157" expanded="true" signature="30011:30185" ph="/// Prepares all chunks for static batching, somewhat expensive operation, use when you're done refreshing or on  ... " />
+                <marker date="1557870838157" expanded="true" signature="30213:30726" ph="{...}" />
+                <marker date="1557870838157" expanded="true" signature="30409:30716" ph="{...}" />
+                <marker date="1557870838157" expanded="true" signature="30603:30702" ph="{...}" />
+                <marker date="1557870838157" expanded="true" signature="30769:30908" ph="/// Gets a list of worlds that can be loaded. ... " />
+                <marker date="1557870838157" expanded="true" signature="30954:31304" ph="{...}" />
+                <marker date="1557870838157" expanded="true" signature="31154:31263" ph="{...}" />
+                <marker date="1557870838157" expanded="true" signature="31313:31577" ph="/// Determines if a world with this name exists and can be loaded. ... " />
+                <marker date="1557870838157" expanded="true" signature="31629:31775" ph="{...}" />
+                <marker date="1557870838157" expanded="true" signature="31784:31930" ph="/// Removes a world from the hard drive. ... " />
+                <marker date="1557870838157" expanded="true" signature="31982:32121" ph="{...}" />
+                <marker date="1557870838157" expanded="true" signature="32130:32549" ph="/// Loads a world and instantiates it into the scene (This method is blocking so its best used within the loading ... " />
+                <marker date="1557870838157" expanded="true" signature="32613:37548" ph="{...}" />
+                <marker date="1557870838157" expanded="true" signature="32747:32855" ph="{...}" />
+                <marker date="1557870838157" expanded="true" signature="32947:37481" ph="{...}" />
+                <marker date="1557870838157" expanded="true" signature="33809:34130" ph="{...}" />
+                <marker date="1557870838157" expanded="true" signature="34359:34635" ph="{...}" />
+                <marker date="1557870838157" expanded="true" signature="34496:34617" ph="{...}" />
+                <marker date="1557870838157" expanded="true" signature="34681:34821" ph="{...}" />
+                <marker date="1557870838157" expanded="true" signature="35006:35256" ph="{...}" />
+                <marker date="1557870838157" expanded="true" signature="35123:35238" ph="{...}" />
+                <marker date="1557870838157" expanded="true" signature="35295:35435" ph="{...}" />
+                <marker date="1557870838157" expanded="true" signature="36003:36676" ph="{...}" />
+                <marker date="1557870838157" expanded="true" signature="36368:36658" ph="{...}" />
+                <marker date="1557870838157" expanded="true" signature="36723:37467" ph="{...}" />
+                <marker date="1557870838157" expanded="true" signature="37557:37762" ph="/// Saves the world into a file (Final path = Application.persistentDataPath + &quot;\\&quot; + name + &quot;.vm&quot;) ... " />
+                <marker date="1557870838157" expanded="true" signature="37805:40360" ph="{...}" />
+                <marker date="1557870838157" expanded="true" signature="37992:40350" ph="{...}" />
+                <marker date="1557870838157" expanded="true" signature="38667:39102" ph="{...}" />
+                <marker date="1557870838157" expanded="true" signature="39158:40279" ph="{...}" />
+                <marker date="1557870838157" expanded="true" signature="39647:40261" ph="{...}" />
+                <marker date="1557870838157" expanded="true" signature="39726:40239" ph="{...}" />
+                <marker date="1557870838157" expanded="true" signature="39813:40213" ph="{...}" />
+                <marker date="1557870838157" expanded="true" signature="40400:40593" ph="{...}" />
+                <marker date="1557870838157" expanded="true" signature="40647:40793" ph="{...}" />
+                <marker date="1557870838157" expanded="true" signature="40878:40996" ph="{...}" />
+                <marker date="1557870838157" expanded="true" signature="41122:41827" ph="{...}" />
+                <marker date="1557870838157" expanded="true" signature="41173:41306" ph="{...}" />
+                <marker date="1557870838157" expanded="true" signature="41352:41489" ph="{...}" />
+                <marker date="1557870838157" expanded="true" signature="41535:41817" ph="{...}" />
+                <marker date="1557870838157" expanded="true" signature="41580:41661" ph="{...}" />
+                <marker date="1557870838157" expanded="true" signature="41682:41803" ph="{...}" />
+                <marker date="1557870838157" expanded="true" signature="41854:41966" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.entities@0.0.12-preview.31/Unity.Entities/Iterators/DynamicBuffer.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="596">
+            <state relative-caret-position="4136">
               <caret line="192" column="20" selection-start-line="192" selection-start-column="20" selection-end-line="192" selection-end-column="20" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assets/Systems/ChunkMarkGenerateJS.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="17" column="57" selection-start-line="17" selection-start-column="57" selection-end-line="17" selection-end-column="57" />
+            <state relative-caret-position="308">
+              <caret line="27" column="47" selection-start-line="27" selection-start-column="47" selection-end-line="27" selection-end-column="47" />
               <folding>
-                <marker date="1558050261209" expanded="true" signature="6:297" ph="..." />
+                <marker date="1558050261209" expanded="false" signature="6:297" ph="..." />
                 <marker date="1558050261209" expanded="true" signature="352:4185" ph="{...}" />
                 <marker date="1558050261209" expanded="true" signature="804:1032" ph="{...}" />
                 <marker date="1558050261209" expanded="true" signature="1073:1113" ph="{...}" />
@@ -153,7 +425,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.entities@0.0.12-preview.31/Unity.Entities/ComponentSystem.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1342">
+            <state relative-caret-position="20196">
               <caret line="928" selection-start-line="928" selection-end-line="928" />
             </state>
           </provider>
@@ -162,7 +434,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.entities@0.0.12-preview.31/Unity.Entities/IJobForEach.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3221">
+            <state relative-caret-position="9196">
               <caret line="428" column="35" selection-start-line="428" selection-start-column="4" selection-end-line="428" selection-end-column="35" />
             </state>
           </provider>
@@ -184,10 +456,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assets/Systems/BlockVisibleJobSystem.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1034">
+            <state relative-caret-position="748">
               <caret line="47" column="44" selection-start-line="47" selection-start-column="44" selection-end-line="47" selection-end-column="44" />
               <folding>
-                <marker date="1558042036650" expanded="true" signature="6:233" ph="..." />
+                <marker date="1558042036650" expanded="false" signature="6:233" ph="..." />
                 <marker date="1558042036650" expanded="true" signature="269:2048" ph="{...}" />
                 <marker date="1558042036650" expanded="true" signature="368:481" ph="{...}" />
                 <marker date="1558042036650" expanded="true" signature="569:1162" ph="{...}" />
@@ -202,11 +474,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Assets/Components/ChunkBufferData.cs">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="110">
-              <caret line="8" column="25" selection-start-line="8" selection-start-column="25" selection-end-line="8" selection-end-column="25" />
+              <caret line="8" column="21" lean-forward="true" selection-start-line="8" selection-start-column="21" selection-end-line="8" selection-end-column="21" />
               <folding>
                 <marker date="1558047830033" expanded="false" signature="6:100" ph="..." />
                 <marker date="1558047830033" expanded="true" signature="183:213" ph="{...}" />
@@ -226,6 +498,7 @@
       <find>Remap</find>
       <find>generat</find>
       <find>tile</find>
+      <find>1</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -250,7 +523,6 @@
     <setting file="file://$PROJECT_DIR$/Assets/VoxelMaster/Scripts/Examples/GenerationExample.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../dots/Samples/Assets/Advanced/Boids/Scripts/Boid.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Components/ChunkBufferData.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/VoxelMaster/Editor/BlockInfoEditor.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.entities@0.0.12-preview.31/Unity.Entities/ComponentSystem.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Components/BlockInvisible.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/55B3A310-A31E-43C3-83AB-AD3A1A616432/93/15f607e2/RenderMesh.cs" root0="SKIP_HIGHLIGHTING" />
@@ -283,7 +555,6 @@
         <option value="$PROJECT_DIR$/Assets/VoxelMaster/Scripts/VoxelGeneration.cs" />
         <option value="$PROJECT_DIR$/Assets/Components/ChunkGenerator.cs" />
         <option value="$PROJECT_DIR$/Assets/Systems/ChunkEntityGenerateJobSystem.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/MeshHack.cs" />
         <option value="$PROJECT_DIR$/Assets/Systems/ChunkRebuildMesh.cs" />
         <option value="$PROJECT_DIR$/Assets/Components/ChunkFinishedGenerate.cs" />
         <option value="$PROJECT_DIR$/Assets/Components/ChunkBlocks.cs" />
@@ -293,8 +564,9 @@
         <option value="$PROJECT_DIR$/Assets/Systems/BlockVisibleJobSystem.cs" />
         <option value="$PROJECT_DIR$/Assets/Components/ChunkBufferData.cs" />
         <option value="$PROJECT_DIR$/Assets/Systems/ChunkGenerateJS.cs" />
-        <option value="$PROJECT_DIR$/Assets/Systems/ChunkBuildMeshJS.cs" />
         <option value="$PROJECT_DIR$/Assets/Systems/ChunkMarkGenerateJS.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/MeshHack.cs" />
+        <option value="$PROJECT_DIR$/Assets/Systems/ChunkBuildMeshJS.cs" />
       </list>
     </option>
   </component>
@@ -304,10 +576,10 @@
     </ignored-facets>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="46" />
-    <option name="y" value="213" />
+    <option name="x" value="106" />
+    <option name="y" value="1655" />
     <option name="width" value="2054" />
-    <option name="height" value="1813" />
+    <option name="height" value="1008" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -366,12 +638,13 @@
       <workItem from="1557871595351" duration="17624000" />
       <workItem from="1558038125700" duration="17000" />
       <workItem from="1558038298943" duration="26000" />
-      <workItem from="1558038543559" duration="11280000" />
+      <workItem from="1558038543559" duration="12501000" />
+      <workItem from="1558114144257" duration="1885000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="56809000" />
+    <option name="totallyTimeSpent" value="59915000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -383,7 +656,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="46" y="213" width="2054" height="1813" extended-state="0" />
+    <frame x="106" y="1655" width="2054" height="1008" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" weight="0.03913738" />
@@ -393,7 +666,7 @@
       <window_info id="Favorites" order="4" side_tool="true" />
       <window_info id="Captures" order="5" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.18865363" />
+      <window_info active="true" anchor="bottom" id="Find" order="1" visible="true" weight="0.1882921" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
@@ -528,10 +801,231 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Systems/ChunkEntityGenerateJobSystem.cs" />
+    <entry file="file://$PROJECT_DIR$/Assets/VoxelMaster/Scripts/Examples/GenerationExample.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="7" column="15" selection-start-line="7" selection-end-line="70" selection-end-column="9" />
+          <folding>
+            <marker date="1557870838157" expanded="false" signature="6:37" ph="..." />
+            <marker date="1557870838157" expanded="true" signature="86:3206" ph="{...}" />
+            <marker date="1557870838157" expanded="true" signature="224:3204" ph="{...}" />
+            <marker date="1557870838157" expanded="true" signature="2030:2428" ph="{...}" />
+            <marker date="1557870838157" expanded="true" signature="2463:3110" ph="{...}" />
+            <marker date="1557870838157" expanded="true" signature="2539:2745" ph="{...}" />
+            <marker date="1557870838157" expanded="true" signature="2819:2915" ph="{...}" />
+            <marker date="1557870838157" expanded="true" signature="2958:3012" ph="{...}" />
+            <marker date="1557870838157" expanded="true" signature="3046:3100" ph="{...}" />
+            <marker date="1557870838157" expanded="true" signature="3155:3198" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Proxies/ChunkGeneratorProxy.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="11" column="5" selection-start-line="11" selection-start-column="5" selection-end-line="11" selection-end-column="5" />
+          <folding>
+            <marker date="1557873389552" expanded="false" signature="6:100" ph="..." />
+            <marker date="1557873389552" expanded="true" signature="178:471" ph="{...}" />
+            <marker date="1557873389552" expanded="true" signature="290:469" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Components/ChunkGenerator.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="9" column="1" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
+          <folding>
+            <marker date="1557875427669" expanded="true" signature="6:125" ph="..." />
+            <marker date="1557875427669" expanded="true" signature="172:203" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/VoxelMaster/Scripts/VoxelGeneration.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1694">
+          <caret line="178" column="33" selection-start-line="176" selection-end-line="179" selection-end-column="75" />
+          <folding>
+            <marker date="1557872536786" expanded="false" signature="6:209" ph="..." />
+            <marker date="1557872536786" expanded="true" signature="232:11865" ph="{...}" />
+            <marker date="1557872536786" expanded="true" signature="328:11863" ph="{...}" />
+            <marker date="1557872536786" expanded="true" signature="551:728" ph="/// The camera used for the generation, helps determining where we should generate chunks and so on. Set with Mai ... " />
+            <marker date="1557872536786" expanded="true" signature="899:1055" ph="/// The generation distance of the generation, chunks virtually farther than this distance won't get generated. ... " />
+            <marker date="1557872536786" expanded="true" signature="1185:1386" ph="/// Determines how much in units the camera has to move for the chunks to update their generation, usually a Chun ... " />
+            <marker date="1557872536786" expanded="true" signature="1597:1805" ph="/// The amount of chunks per frame to generate, lower values makes chunk generation slower, but less laggy, while ... " />
+            <marker date="1557872536786" expanded="true" signature="2057:2236" ph="/// Determines if chunks further than dispose distance &amp; that weren't modified in any way should be destroyed in  ... " />
+            <marker date="1557872536786" expanded="true" signature="2522:2649" ph="/* public GameObject cubePrefab; ... */" />
+            <marker date="1557872536786" expanded="true" signature="2936:3119" ph="{...}" />
+            <marker date="1557872536786" expanded="true" signature="3141:3915" ph="{...}" />
+            <marker date="1557872536786" expanded="true" signature="3367:3461" ph="{...}" />
+            <marker date="1557872536786" expanded="true" signature="3777:3836" ph="{...}" />
+            <marker date="1557872536786" expanded="true" signature="3938:4349" ph="{...}" />
+            <marker date="1557872536786" expanded="true" signature="4088:4169" ph="{...}" />
+            <marker date="1557872536786" expanded="true" signature="4259:4339" ph="{...}" />
+            <marker date="1557872536786" expanded="true" signature="4375:4733" ph="{...}" />
+            <marker date="1557872536786" expanded="true" signature="4427:4624" ph="{...}" />
+            <marker date="1557872536786" expanded="true" signature="4657:4723" ph="{...}" />
+            <marker date="1557872536786" expanded="true" signature="4755:4809" ph="{...}" />
+            <marker date="1557872536786" expanded="true" signature="4909:6008" ph="{...}" />
+            <marker date="1557872536786" expanded="true" signature="5074:5998" ph="{...}" />
+            <marker date="1557872536786" expanded="true" signature="5127:5948" ph="{...}" />
+            <marker date="1557872536786" expanded="true" signature="5364:5930" ph="{...}" />
+            <marker date="1557872536786" expanded="true" signature="5601:5908" ph="{...}" />
+            <marker date="1557872536786" expanded="true" signature="6064:6840" ph="{...}" />
+            <marker date="1557872536786" expanded="true" signature="6119:6830" ph="{...}" />
+            <marker date="1557872536786" expanded="true" signature="6182:6816" ph="{...}" />
+            <marker date="1557872536786" expanded="true" signature="6253:6798" ph="{...}" />
+            <marker date="1557872536786" expanded="true" signature="6902:8070" ph="{...}" />
+            <marker date="1557872536786" expanded="true" signature="7264:7760" ph="{...}" />
+            <marker date="1557872536786" expanded="true" signature="7330:7746" ph="{...}" />
+            <marker date="1557872536786" expanded="true" signature="7404:7728" ph="{...}" />
+            <marker date="1557872536786" expanded="true" signature="7545:7706" ph="{...}" />
+            <marker date="1557872536786" expanded="true" signature="7879:8060" ph="{...}" />
+            <marker date="1557872536786" expanded="true" signature="8080:8380" ph="/// Sets the procedural generation action to generate the terrain with. ... " />
+            <marker date="1557872536786" expanded="true" signature="8455:8579" ph="{...}" />
+            <marker date="1557872536786" expanded="true" signature="8589:9032" ph="/// Remaps a value from a range to another. ... " />
+            <marker date="1557872536786" expanded="true" signature="9190:9291" ph="{...}" />
+            <marker date="1557872536786" expanded="true" signature="9300:9517" ph="/// Steps A &gt;= B ... " />
+            <marker date="1557872536786" expanded="true" signature="9630:9689" ph="{...}" />
+            <marker date="1557872536786" expanded="true" signature="9763:10142" ph="{...}" />
+            <marker date="1557872536786" expanded="true" signature="9917:10053" ph="{...}" />
+            <marker date="1557872536786" expanded="true" signature="10218:11439" ph="{...}" />
+            <marker date="1557872536786" expanded="true" signature="10785:11349" ph="{...}" />
+            <marker date="1557872536786" expanded="true" signature="10862:11335" ph="{...}" />
+            <marker date="1557872536786" expanded="true" signature="10947:11317" ph="{...}" />
+            <marker date="1557872536786" expanded="true" signature="11182:11295" ph="{...}" />
+            <marker date="1557872536786" expanded="true" signature="11501:11585" ph="{...}" />
+            <marker date="1557872536786" expanded="true" signature="11614:11857" ph="{...}" />
+            <marker date="1557872536786" expanded="true" signature="11745:11847" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../dots/Samples/Packages/com.unity.entities/Unity.Entities/EntityCommandBuffer.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2745">
+          <caret line="354" column="13" selection-start-line="354" selection-start-column="13" selection-end-line="354" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.entities@0.0.12-preview.31/Unity.Entities/EntityManager.cs" />
+    <entry file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.collections@0.0.9-preview.18/Unity.Collections/NativeHashMap.cs" />
+    <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/55B3A310-A31E-43C3-83AB-AD3A1A616432/93/15f607e2/RenderMesh.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="15" column="16" selection-start-line="15" selection-start-column="16" selection-end-line="15" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.entities@0.0.12-preview.31/Unity.Entities/EntityCommandBuffer.cs" />
+    <entry file="file://$PROJECT_DIR$/Assets/Systems/BlockTagComponent.cs" />
+    <entry file="file://$PROJECT_DIR$/Assets/Components/MeshTagComponent.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="44">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+          <folding>
+            <marker date="1557958521130" expanded="false" signature="6:100" ph="..." />
+            <marker date="1557958521130" expanded="true" signature="149:154" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/VoxelMaster/Scripts/Block.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="902">
+          <caret line="41" column="43" selection-start-line="41" selection-start-column="43" selection-end-line="41" selection-end-column="43" />
+          <folding>
+            <marker date="1557870838157" expanded="true" signature="41:1816" ph="{...}" />
+            <marker date="1557870838157" expanded="true" signature="66:1814" ph="{...}" />
+            <marker date="1557870838157" expanded="true" signature="81:143" ph="/// The block ID. ... " />
+            <marker date="1557870838157" expanded="true" signature="198:336" ph="/// The block info, usually automatically set by VoxelTerrain after a BlockDictionary lookup. ... " />
+            <marker date="1557870838157" expanded="true" signature="447:683" ph="/// Creates a block (Please create blocks by using SetBlockID() from VoxelTerrain or Chunk. ... " />
+            <marker date="1557870838157" expanded="true" signature="731:1143" ph="{...}" />
+            <marker date="1557870838157" expanded="true" signature="856:944" ph="{...}" />
+            <marker date="1557870838157" expanded="true" signature="961:1133" ph="{...}" />
+            <marker date="1557870838157" expanded="true" signature="1211:1546" ph="{...}" />
+            <marker date="1557870838157" expanded="true" signature="1293:1536" ph="{...}" />
+            <marker date="1557870838157" expanded="true" signature="1412:1522" ph="{...}" />
+            <marker date="1557870838157" expanded="true" signature="1556:1674" ph="/// Returns the block name. ... " />
+            <marker date="1557870838157" expanded="true" signature="1716:1808" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.entities@0.0.12-preview.31/Unity.Entities/IJobChunk.cs" />
+    <entry file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.entities@0.0.12-preview.31/Unity.Entities/IJobForEach.gen.cs" />
+    <entry file="file://$PROJECT_DIR$/Assets/Systems/ChunkRebuildMesh.cs" />
+    <entry file="file://$PROJECT_DIR$/Assets/Components/ChunkBlocks.cs" />
+    <entry file="file://$PROJECT_DIR$/Assets/Systems/ChunkPosition.cs" />
+    <entry file="file://$PROJECT_DIR$/Assets/Components/ChunkPendingGenerate.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+          <folding>
+            <marker date="1558036494406" expanded="false" signature="6:125" ph="..." />
+            <marker date="1558036494406" expanded="true" signature="178:181" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Components/ChunkFinishedGenerate.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="22">
+          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+          <folding>
+            <marker date="1557955594573" expanded="false" signature="6:100" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.entities@0.0.12-preview.32/Unity.Entities/IJobForEach.cs" />
+    <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/2BDB1149-ACC2-4658-A7BF-991290E14DAD/7b/92e6d058/Mesh.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-5544">
+          <caret line="23" column="22" selection-start-line="23" selection-start-column="22" selection-end-line="23" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Systems/ChunkGenerateJS.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1826">
+          <caret line="162" column="21" selection-start-line="162" selection-start-column="21" selection-end-line="162" selection-end-column="21" />
+          <folding>
+            <marker date="1558047836433" expanded="false" signature="6:174" ph="..." />
+            <marker date="1558047836433" expanded="true" signature="225:7235" ph="{...}" />
+            <marker date="1558047836433" expanded="true" signature="395:586" ph="{...}" />
+            <marker date="1558047836433" expanded="true" signature="633:722" ph="{...}" />
+            <marker date="1558047836433" expanded="true" signature="766:1629" ph="{...}" />
+            <marker date="1558047836433" expanded="true" signature="914:1000" ph="{...}" />
+            <marker date="1558047836433" expanded="true" signature="1505:1623" ph="/* em.AddComponentData(blockPrefab, new BlockInvisible()); ... */" />
+            <marker date="1558047836433" expanded="true" signature="1785:1874" ph="{...}" />
+            <marker date="1558047836433" expanded="true" signature="1966:4921" ph="{...}" />
+            <marker date="1558047836433" expanded="true" signature="3747:4145" ph="{...}" />
+            <marker date="1558047836433" expanded="true" signature="4180:4827" ph="{...}" />
+            <marker date="1558047836433" expanded="true" signature="4256:4462" ph="{...}" />
+            <marker date="1558047836433" expanded="true" signature="4536:4632" ph="{...}" />
+            <marker date="1558047836433" expanded="true" signature="4675:4729" ph="{...}" />
+            <marker date="1558047836433" expanded="true" signature="4763:4817" ph="{...}" />
+            <marker date="1558047836433" expanded="true" signature="4872:4915" ph="{...}" />
+            <marker date="1558047836433" expanded="true" signature="5038:5300" ph="{...}" />
+            <marker date="1558047836433" expanded="true" signature="5394:6745" ph="{...}" />
+            <marker date="1558047836433" expanded="true" signature="5731:6739" ph="{...}" />
+            <marker date="1558047836433" expanded="true" signature="5801:6574" ph="{...}" />
+            <marker date="1558047836433" expanded="true" signature="5867:6560" ph="{...}" />
+            <marker date="1558047836433" expanded="true" signature="5941:6542" ph="{...}" />
+            <marker date="1558047836433" expanded="true" signature="6360:6520" ph="/* var pos = new float3(chunkPos.pos.x + x, chunkPos.pos.y + y, chunkPos.pos.z + z); ... */" />
+            <marker date="1558047836433" expanded="true" signature="6814:7233" ph="{...}" />
+            <marker date="1558047836433" expanded="true" signature="6876:7089" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Assets/VoxelMaster/Scripts/VoxelTerrain.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1382">
-          <caret line="68" column="26" selection-start-line="68" selection-end-line="69" />
+        <state relative-caret-position="1254">
+          <caret line="62" column="19" selection-start-line="62" selection-start-column="19" selection-end-line="62" selection-end-column="19" />
           <folding>
             <marker date="1557870838157" expanded="false" signature="6:114" ph="..." />
             <marker date="1557870838157" expanded="true" signature="137:41974" ph="{...}" />
@@ -689,178 +1183,87 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/VoxelMaster/Scripts/Examples/GenerationExample.cs">
+    <entry file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.entities@0.0.12-preview.31/Unity.Entities/Iterators/DynamicBuffer.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="7" column="15" selection-start-line="7" selection-end-line="70" selection-end-column="9" />
+        <state relative-caret-position="4136">
+          <caret line="192" column="20" selection-start-line="192" selection-start-column="20" selection-end-line="192" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Systems/ChunkMarkGenerateJS.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="27" column="47" selection-start-line="27" selection-start-column="47" selection-end-line="27" selection-end-column="47" />
           <folding>
-            <marker date="1557870838157" expanded="false" signature="6:37" ph="..." />
-            <marker date="1557870838157" expanded="true" signature="86:3206" ph="{...}" />
-            <marker date="1557870838157" expanded="true" signature="224:3204" ph="{...}" />
-            <marker date="1557870838157" expanded="true" signature="2030:2428" ph="{...}" />
-            <marker date="1557870838157" expanded="true" signature="2463:3110" ph="{...}" />
-            <marker date="1557870838157" expanded="true" signature="2539:2745" ph="{...}" />
-            <marker date="1557870838157" expanded="true" signature="2819:2915" ph="{...}" />
-            <marker date="1557870838157" expanded="true" signature="2958:3012" ph="{...}" />
-            <marker date="1557870838157" expanded="true" signature="3046:3100" ph="{...}" />
-            <marker date="1557870838157" expanded="true" signature="3155:3198" ph="{...}" />
+            <marker date="1558050261209" expanded="false" signature="6:297" ph="..." />
+            <marker date="1558050261209" expanded="true" signature="352:4185" ph="{...}" />
+            <marker date="1558050261209" expanded="true" signature="804:1032" ph="{...}" />
+            <marker date="1558050261209" expanded="true" signature="1073:1113" ph="{...}" />
+            <marker date="1558050261209" expanded="true" signature="1138:1343" ph="{...}" />
+            <marker date="1558050261209" expanded="true" signature="1251:1337" ph="{...}" />
+            <marker date="1558050261209" expanded="true" signature="1402:1497" ph="{...}" />
+            <marker date="1558050261209" expanded="true" signature="1612:2790" ph="{...}" />
+            <marker date="1558050261209" expanded="true" signature="2106:2784" ph="{...}" />
+            <marker date="1558050261209" expanded="true" signature="2175:2774" ph="{...}" />
+            <marker date="1558050261209" expanded="true" signature="2252:2760" ph="{...}" />
+            <marker date="1558050261209" expanded="true" signature="2525:2742" ph="{...}" />
+            <marker date="1558050261209" expanded="true" signature="2889:3238" ph="{...}" />
+            <marker date="1558050261209" expanded="true" signature="3325:3855" ph="{...}" />
+            <marker date="1558050261209" expanded="true" signature="3509:3849" ph="{...}" />
+            <marker date="1558050261209" expanded="true" signature="3641:3839" ph="{...}" />
+            <marker date="1558050261209" expanded="true" signature="3923:4183" ph="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Proxies/ChunkGeneratorProxy.cs">
+    <entry file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.entities@0.0.12-preview.31/Unity.Entities/ComponentSystem.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="11" column="5" selection-start-line="11" selection-start-column="5" selection-end-line="11" selection-end-column="5" />
-          <folding>
-            <marker date="1557873389552" expanded="false" signature="6:100" ph="..." />
-            <marker date="1557873389552" expanded="true" signature="178:471" ph="{...}" />
-            <marker date="1557873389552" expanded="true" signature="290:469" ph="{...}" />
-          </folding>
+        <state relative-caret-position="20196">
+          <caret line="928" selection-start-line="928" selection-end-line="928" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Components/ChunkGenerator.cs">
+    <entry file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.entities@0.0.12-preview.31/Unity.Entities/IJobForEach.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="9" column="1" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
-          <folding>
-            <marker date="1557875427669" expanded="true" signature="6:125" ph="..." />
-            <marker date="1557875427669" expanded="true" signature="172:203" ph="{...}" />
-          </folding>
+        <state relative-caret-position="9196">
+          <caret line="428" column="35" selection-start-line="428" selection-start-column="4" selection-end-line="428" selection-end-column="35" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Scripts/MeshHack.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="506">
-          <caret line="25" selection-start-line="25" selection-end-line="25" />
-          <folding>
-            <marker date="1557879127898" expanded="false" signature="6:78" ph="..." />
-            <marker date="1557879127898" expanded="true" signature="117:488" ph="{...}" />
-            <marker date="1557879127898" expanded="true" signature="329:407" ph="{...}" />
-            <marker date="1557879127898" expanded="true" signature="465:486" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/VoxelMaster/Scripts/VoxelGeneration.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1694">
-          <caret line="178" column="33" selection-start-line="176" selection-end-line="179" selection-end-column="75" />
-          <folding>
-            <marker date="1557872536786" expanded="false" signature="6:209" ph="..." />
-            <marker date="1557872536786" expanded="true" signature="232:11865" ph="{...}" />
-            <marker date="1557872536786" expanded="true" signature="328:11863" ph="{...}" />
-            <marker date="1557872536786" expanded="true" signature="551:728" ph="/// The camera used for the generation, helps determining where we should generate chunks and so on. Set with Mai ... " />
-            <marker date="1557872536786" expanded="true" signature="899:1055" ph="/// The generation distance of the generation, chunks virtually farther than this distance won't get generated. ... " />
-            <marker date="1557872536786" expanded="true" signature="1185:1386" ph="/// Determines how much in units the camera has to move for the chunks to update their generation, usually a Chun ... " />
-            <marker date="1557872536786" expanded="true" signature="1597:1805" ph="/// The amount of chunks per frame to generate, lower values makes chunk generation slower, but less laggy, while ... " />
-            <marker date="1557872536786" expanded="true" signature="2057:2236" ph="/// Determines if chunks further than dispose distance &amp; that weren't modified in any way should be destroyed in  ... " />
-            <marker date="1557872536786" expanded="true" signature="2522:2649" ph="/* public GameObject cubePrefab; ... */" />
-            <marker date="1557872536786" expanded="true" signature="2936:3119" ph="{...}" />
-            <marker date="1557872536786" expanded="true" signature="3141:3915" ph="{...}" />
-            <marker date="1557872536786" expanded="true" signature="3367:3461" ph="{...}" />
-            <marker date="1557872536786" expanded="true" signature="3777:3836" ph="{...}" />
-            <marker date="1557872536786" expanded="true" signature="3938:4349" ph="{...}" />
-            <marker date="1557872536786" expanded="true" signature="4088:4169" ph="{...}" />
-            <marker date="1557872536786" expanded="true" signature="4259:4339" ph="{...}" />
-            <marker date="1557872536786" expanded="true" signature="4375:4733" ph="{...}" />
-            <marker date="1557872536786" expanded="true" signature="4427:4624" ph="{...}" />
-            <marker date="1557872536786" expanded="true" signature="4657:4723" ph="{...}" />
-            <marker date="1557872536786" expanded="true" signature="4755:4809" ph="{...}" />
-            <marker date="1557872536786" expanded="true" signature="4909:6008" ph="{...}" />
-            <marker date="1557872536786" expanded="true" signature="5074:5998" ph="{...}" />
-            <marker date="1557872536786" expanded="true" signature="5127:5948" ph="{...}" />
-            <marker date="1557872536786" expanded="true" signature="5364:5930" ph="{...}" />
-            <marker date="1557872536786" expanded="true" signature="5601:5908" ph="{...}" />
-            <marker date="1557872536786" expanded="true" signature="6064:6840" ph="{...}" />
-            <marker date="1557872536786" expanded="true" signature="6119:6830" ph="{...}" />
-            <marker date="1557872536786" expanded="true" signature="6182:6816" ph="{...}" />
-            <marker date="1557872536786" expanded="true" signature="6253:6798" ph="{...}" />
-            <marker date="1557872536786" expanded="true" signature="6902:8070" ph="{...}" />
-            <marker date="1557872536786" expanded="true" signature="7264:7760" ph="{...}" />
-            <marker date="1557872536786" expanded="true" signature="7330:7746" ph="{...}" />
-            <marker date="1557872536786" expanded="true" signature="7404:7728" ph="{...}" />
-            <marker date="1557872536786" expanded="true" signature="7545:7706" ph="{...}" />
-            <marker date="1557872536786" expanded="true" signature="7879:8060" ph="{...}" />
-            <marker date="1557872536786" expanded="true" signature="8080:8380" ph="/// Sets the procedural generation action to generate the terrain with. ... " />
-            <marker date="1557872536786" expanded="true" signature="8455:8579" ph="{...}" />
-            <marker date="1557872536786" expanded="true" signature="8589:9032" ph="/// Remaps a value from a range to another. ... " />
-            <marker date="1557872536786" expanded="true" signature="9190:9291" ph="{...}" />
-            <marker date="1557872536786" expanded="true" signature="9300:9517" ph="/// Steps A &gt;= B ... " />
-            <marker date="1557872536786" expanded="true" signature="9630:9689" ph="{...}" />
-            <marker date="1557872536786" expanded="true" signature="9763:10142" ph="{...}" />
-            <marker date="1557872536786" expanded="true" signature="9917:10053" ph="{...}" />
-            <marker date="1557872536786" expanded="true" signature="10218:11439" ph="{...}" />
-            <marker date="1557872536786" expanded="true" signature="10785:11349" ph="{...}" />
-            <marker date="1557872536786" expanded="true" signature="10862:11335" ph="{...}" />
-            <marker date="1557872536786" expanded="true" signature="10947:11317" ph="{...}" />
-            <marker date="1557872536786" expanded="true" signature="11182:11295" ph="{...}" />
-            <marker date="1557872536786" expanded="true" signature="11501:11585" ph="{...}" />
-            <marker date="1557872536786" expanded="true" signature="11614:11857" ph="{...}" />
-            <marker date="1557872536786" expanded="true" signature="11745:11847" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../dots/Samples/Packages/com.unity.entities/Unity.Entities/EntityCommandBuffer.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2745">
-          <caret line="354" column="13" selection-start-line="354" selection-start-column="13" selection-end-line="354" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.entities@0.0.12-preview.31/Unity.Entities/EntityManager.cs" />
-    <entry file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.collections@0.0.9-preview.18/Unity.Collections/NativeHashMap.cs" />
-    <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/55B3A310-A31E-43C3-83AB-AD3A1A616432/93/15f607e2/RenderMesh.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="15" column="16" selection-start-line="15" selection-start-column="16" selection-end-line="15" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.entities@0.0.12-preview.31/Unity.Entities/EntityCommandBuffer.cs" />
-    <entry file="file://$PROJECT_DIR$/Assets/Systems/BlockTagComponent.cs" />
-    <entry file="file://$PROJECT_DIR$/Assets/Components/MeshTagComponent.cs">
+    <entry file="file://$PROJECT_DIR$/Assets/Components/BlockInvisible.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="44">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+          <caret line="6" column="1" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
           <folding>
-            <marker date="1557958521130" expanded="false" signature="6:100" ph="..." />
-            <marker date="1557958521130" expanded="true" signature="149:154" ph="{...}" />
+            <marker date="1558037088741" expanded="false" signature="6:100" ph="..." />
+            <marker date="1558037088741" expanded="true" signature="147:150" ph="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/VoxelMaster/Scripts/Block.cs">
+    <entry file="file://$PROJECT_DIR$/Assets/Systems/BlockVisibleJobSystem.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="902">
-          <caret line="41" column="43" selection-start-line="41" selection-start-column="43" selection-end-line="41" selection-end-column="43" />
+        <state relative-caret-position="748">
+          <caret line="47" column="44" selection-start-line="47" selection-start-column="44" selection-end-line="47" selection-end-column="44" />
           <folding>
-            <marker date="1557870838157" expanded="true" signature="41:1816" ph="{...}" />
-            <marker date="1557870838157" expanded="true" signature="66:1814" ph="{...}" />
-            <marker date="1557870838157" expanded="true" signature="81:143" ph="/// The block ID. ... " />
-            <marker date="1557870838157" expanded="true" signature="198:336" ph="/// The block info, usually automatically set by VoxelTerrain after a BlockDictionary lookup. ... " />
-            <marker date="1557870838157" expanded="true" signature="447:683" ph="/// Creates a block (Please create blocks by using SetBlockID() from VoxelTerrain or Chunk. ... " />
-            <marker date="1557870838157" expanded="true" signature="731:1143" ph="{...}" />
-            <marker date="1557870838157" expanded="true" signature="856:944" ph="{...}" />
-            <marker date="1557870838157" expanded="true" signature="961:1133" ph="{...}" />
-            <marker date="1557870838157" expanded="true" signature="1211:1546" ph="{...}" />
-            <marker date="1557870838157" expanded="true" signature="1293:1536" ph="{...}" />
-            <marker date="1557870838157" expanded="true" signature="1412:1522" ph="{...}" />
-            <marker date="1557870838157" expanded="true" signature="1556:1674" ph="/// Returns the block name. ... " />
-            <marker date="1557870838157" expanded="true" signature="1716:1808" ph="{...}" />
+            <marker date="1558042036650" expanded="false" signature="6:233" ph="..." />
+            <marker date="1558042036650" expanded="true" signature="269:2048" ph="{...}" />
+            <marker date="1558042036650" expanded="true" signature="368:481" ph="{...}" />
+            <marker date="1558042036650" expanded="true" signature="569:1162" ph="{...}" />
+            <marker date="1558042036650" expanded="true" signature="787:1156" ph="{...}" />
+            <marker date="1558042036650" expanded="true" signature="937:1146" ph="{...}" />
+            <marker date="1558042036650" expanded="true" signature="965:1132" ph="/* Debug.Log(&quot;RJ idx:&quot;+index+&quot;entity:&quot;+entity.Index+&quot;xFloor:&quot;+xFloor+&quot; zFloor:&quot;+zFloor); ... */" />
+            <marker date="1558042036650" expanded="true" signature="1171:1240" ph="/* protected override JobHandle OnUpdate(JobHandle inputDeps) ... */" />
+            <marker date="1558042036650" expanded="true" signature="1248:1709" ph="/* var desc = new EntityQueryDesc() ... */" />
+            <marker date="1558042036650" expanded="true" signature="1753:2029" ph="/* var job = new HideUnseenBlocksJob(); ... */" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.entities@0.0.12-preview.31/Unity.Entities/IJobChunk.cs" />
-    <entry file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.entities@0.0.12-preview.31/Unity.Entities/IJobForEach.gen.cs" />
     <entry file="file://$PROJECT_DIR$/Assets/VoxelMaster/Scripts/Chunk.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="498">
-          <caret line="124" column="27" selection-start-line="124" selection-start-column="27" selection-end-line="124" selection-end-column="27" />
+        <state relative-caret-position="7568">
+          <caret line="375" column="54" selection-start-line="375" selection-start-column="54" selection-end-line="375" selection-end-column="54" />
           <folding>
             <marker date="1557870838157" expanded="false" signature="6:264" ph="..." />
             <marker date="1557870838157" expanded="true" signature="287:18818" ph="{...}" />
@@ -949,93 +1352,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Systems/ChunkRebuildMesh.cs" />
-    <entry file="file://$PROJECT_DIR$/Assets/Components/ChunkBlocks.cs" />
-    <entry file="file://$PROJECT_DIR$/Assets/Systems/ChunkPosition.cs" />
-    <entry file="file://$PROJECT_DIR$/Assets/Components/ChunkPendingGenerate.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
-          <folding>
-            <marker date="1558036494406" expanded="false" signature="6:125" ph="..." />
-            <marker date="1558036494406" expanded="true" signature="178:181" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Components/ChunkFinishedGenerate.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="22">
-          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
-          <folding>
-            <marker date="1557955594573" expanded="false" signature="6:100" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Components/BlockInvisible.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="44">
-          <caret line="6" column="1" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
-          <folding>
-            <marker date="1558037088741" expanded="false" signature="6:100" ph="..." />
-            <marker date="1558037088741" expanded="true" signature="147:150" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.entities@0.0.12-preview.32/Unity.Entities/IJobForEach.cs" />
-    <entry file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.entities@0.0.12-preview.31/Unity.Entities/IJobForEach.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3221">
-          <caret line="428" column="35" selection-start-line="428" selection-start-column="4" selection-end-line="428" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Systems/BlockVisibleJobSystem.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1034">
-          <caret line="47" column="44" selection-start-line="47" selection-start-column="44" selection-end-line="47" selection-end-column="44" />
-          <folding>
-            <marker date="1558042036650" expanded="true" signature="6:233" ph="..." />
-            <marker date="1558042036650" expanded="true" signature="269:2048" ph="{...}" />
-            <marker date="1558042036650" expanded="true" signature="368:481" ph="{...}" />
-            <marker date="1558042036650" expanded="true" signature="569:1162" ph="{...}" />
-            <marker date="1558042036650" expanded="true" signature="787:1156" ph="{...}" />
-            <marker date="1558042036650" expanded="true" signature="937:1146" ph="{...}" />
-            <marker date="1558042036650" expanded="true" signature="965:1132" ph="/* Debug.Log(&quot;RJ idx:&quot;+index+&quot;entity:&quot;+entity.Index+&quot;xFloor:&quot;+xFloor+&quot; zFloor:&quot;+zFloor); ... */" />
-            <marker date="1558042036650" expanded="true" signature="1171:1240" ph="/* protected override JobHandle OnUpdate(JobHandle inputDeps) ... */" />
-            <marker date="1558042036650" expanded="true" signature="1248:1709" ph="/* var desc = new EntityQueryDesc() ... */" />
-            <marker date="1558042036650" expanded="true" signature="1753:2029" ph="/* var job = new HideUnseenBlocksJob(); ... */" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.entities@0.0.12-preview.31/Unity.Entities/Iterators/DynamicBuffer.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="596">
-          <caret line="192" column="20" selection-start-line="192" selection-start-column="20" selection-end-line="192" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Components/ChunkBufferData.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
-          <caret line="8" column="25" selection-start-line="8" selection-start-column="25" selection-end-line="8" selection-end-column="25" />
-          <folding>
-            <marker date="1558047830033" expanded="false" signature="6:100" ph="..." />
-            <marker date="1558047830033" expanded="true" signature="183:213" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/2BDB1149-ACC2-4658-A7BF-991290E14DAD/7b/92e6d058/Mesh.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-5544">
-          <caret line="23" column="22" selection-start-line="23" selection-start-column="22" selection-end-line="23" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/90F72C72-6D2B-44D1-B959-55C4DDC6F13B/0a/9d9fe398/RenderMesh.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="308">
@@ -1043,103 +1359,65 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.entities@0.0.12-preview.31/Unity.Entities/ComponentSystem.cs">
+    <entry file="file://$PROJECT_DIR$/Assets/Components/ChunkBufferData.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1342">
-          <caret line="928" selection-start-line="928" selection-end-line="928" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Systems/ChunkGenerateJS.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2024">
-          <caret line="162" column="21" lean-forward="true" selection-start-line="162" selection-start-column="21" selection-end-line="162" selection-end-column="21" />
+        <state relative-caret-position="110">
+          <caret line="8" column="21" lean-forward="true" selection-start-line="8" selection-start-column="21" selection-end-line="8" selection-end-column="21" />
           <folding>
-            <marker date="1558047836433" expanded="true" signature="6:174" ph="..." />
-            <marker date="1558047836433" expanded="true" signature="225:7235" ph="{...}" />
-            <marker date="1558047836433" expanded="true" signature="395:586" ph="{...}" />
-            <marker date="1558047836433" expanded="true" signature="633:722" ph="{...}" />
-            <marker date="1558047836433" expanded="true" signature="766:1629" ph="{...}" />
-            <marker date="1558047836433" expanded="true" signature="914:1000" ph="{...}" />
-            <marker date="1558047836433" expanded="true" signature="1505:1623" ph="/* em.AddComponentData(blockPrefab, new BlockInvisible()); ... */" />
-            <marker date="1558047836433" expanded="true" signature="1785:1874" ph="{...}" />
-            <marker date="1558047836433" expanded="false" signature="1966:4921" ph="{...}" />
-            <marker date="1558047836433" expanded="true" signature="3747:4145" ph="{...}" />
-            <marker date="1558047836433" expanded="true" signature="4180:4827" ph="{...}" />
-            <marker date="1558047836433" expanded="true" signature="4256:4462" ph="{...}" />
-            <marker date="1558047836433" expanded="true" signature="4536:4632" ph="{...}" />
-            <marker date="1558047836433" expanded="true" signature="4675:4729" ph="{...}" />
-            <marker date="1558047836433" expanded="true" signature="4763:4817" ph="{...}" />
-            <marker date="1558047836433" expanded="true" signature="4872:4915" ph="{...}" />
-            <marker date="1558047836433" expanded="true" signature="5038:5300" ph="{...}" />
-            <marker date="1558047836433" expanded="true" signature="5394:6745" ph="{...}" />
-            <marker date="1558047836433" expanded="true" signature="5731:6739" ph="{...}" />
-            <marker date="1558047836433" expanded="true" signature="5801:6574" ph="{...}" />
-            <marker date="1558047836433" expanded="true" signature="5867:6560" ph="{...}" />
-            <marker date="1558047836433" expanded="true" signature="5941:6542" ph="{...}" />
-            <marker date="1558047836433" expanded="true" signature="6360:6520" ph="/* var pos = new float3(chunkPos.pos.x + x, chunkPos.pos.y + y, chunkPos.pos.z + z); ... */" />
-            <marker date="1558047836433" expanded="true" signature="6814:7233" ph="{...}" />
-            <marker date="1558047836433" expanded="true" signature="6876:7089" ph="{...}" />
+            <marker date="1558047830033" expanded="false" signature="6:100" ph="..." />
+            <marker date="1558047830033" expanded="true" signature="183:213" ph="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Systems/ChunkMarkGenerateJS.cs">
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/MeshHack.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="17" column="57" selection-start-line="17" selection-start-column="57" selection-end-line="17" selection-end-column="57" />
+        <state relative-caret-position="660">
+          <caret line="33" lean-forward="true" selection-start-line="33" selection-end-line="33" />
           <folding>
-            <marker date="1558050261209" expanded="true" signature="6:297" ph="..." />
-            <marker date="1558050261209" expanded="true" signature="352:4185" ph="{...}" />
-            <marker date="1558050261209" expanded="true" signature="804:1032" ph="{...}" />
-            <marker date="1558050261209" expanded="true" signature="1073:1113" ph="{...}" />
-            <marker date="1558050261209" expanded="true" signature="1138:1343" ph="{...}" />
-            <marker date="1558050261209" expanded="true" signature="1251:1337" ph="{...}" />
-            <marker date="1558050261209" expanded="true" signature="1402:1497" ph="{...}" />
-            <marker date="1558050261209" expanded="true" signature="1612:2790" ph="{...}" />
-            <marker date="1558050261209" expanded="true" signature="2106:2784" ph="{...}" />
-            <marker date="1558050261209" expanded="true" signature="2175:2774" ph="{...}" />
-            <marker date="1558050261209" expanded="true" signature="2252:2760" ph="{...}" />
-            <marker date="1558050261209" expanded="true" signature="2525:2742" ph="{...}" />
-            <marker date="1558050261209" expanded="true" signature="2889:3238" ph="{...}" />
-            <marker date="1558050261209" expanded="true" signature="3325:3855" ph="{...}" />
-            <marker date="1558050261209" expanded="true" signature="3509:3849" ph="{...}" />
-            <marker date="1558050261209" expanded="true" signature="3641:3839" ph="{...}" />
-            <marker date="1558050261209" expanded="true" signature="3923:4183" ph="{...}" />
+            <marker date="1558115581439" expanded="false" signature="6:97" ph="..." />
+            <marker date="1558115581439" expanded="true" signature="136:733" ph="{...}" />
+            <marker date="1558115581439" expanded="true" signature="348:426" ph="{...}" />
+            <marker date="1558115581439" expanded="true" signature="484:505" ph="{...}" />
+            <marker date="1558115581439" expanded="true" signature="577:731" ph="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Systems/ChunkBuildMeshJS.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="506">
-          <caret line="53" column="5" lean-forward="true" selection-start-line="53" selection-start-column="5" selection-end-line="53" selection-end-column="5" />
+        <state relative-caret-position="484">
+          <caret line="34" selection-start-line="34" selection-end-line="34" />
           <folding>
-            <marker date="1558050253288" expanded="true" signature="6:296" ph="..." />
-            <marker date="1558050253288" expanded="true" signature="348:6679" ph="{...}" />
-            <marker date="1558050253288" expanded="true" signature="552:838" ph="{...}" />
-            <marker date="1558050253288" expanded="true" signature="582:802" ph="{...}" />
-            <marker date="1558050253288" expanded="true" signature="885:974" ph="{...}" />
-            <marker date="1558050253288" expanded="true" signature="1047:1394" ph="{...}" />
-            <marker date="1558050253288" expanded="true" signature="1490:4878" ph="{...}" />
-            <marker date="1558050253288" expanded="true" signature="1853:4872" ph="{...}" />
-            <marker date="1558050253288" expanded="true" signature="1941:2291" ph="/* for (int i = 0; i &lt; buffer.Length; i++) ... */" />
-            <marker date="1558050253288" expanded="true" signature="2365:4756" ph="{...}" />
-            <marker date="1558050253288" expanded="true" signature="2431:4725" ph="{...}" />
-            <marker date="1558050253288" expanded="true" signature="2505:4707" ph="{...}" />
-            <marker date="1558050253288" expanded="true" signature="2970:3252" ph="/* int tidx = FlattenToIdx(x, y + 1, z, ChunkSize); ... */" />
-            <marker date="1558050253288" expanded="true" signature="3334:4517" ph="{...}" />
-            <marker date="1558050253288" expanded="true" signature="3421:4491" ph="{...}" />
-            <marker date="1558050253288" expanded="true" signature="3516:4461" ph="{...}" />
-            <marker date="1558050253288" expanded="true" signature="3905:4087" ph="/* When tidx is 1, that means we've on a this chunk's border. We dont ... */" />
-            <marker date="1558050253288" expanded="true" signature="4248:4427" ph="{...}" />
-            <marker date="1558050253288" expanded="true" signature="4555:4685" ph="{...}" />
-            <marker date="1558050253288" expanded="true" signature="4999:5332" ph="{...}" />
-            <marker date="1558050253288" expanded="true" signature="5372:6224" ph="{...}" />
-            <marker date="1558050253288" expanded="true" signature="5525:5624" ph="{...}" />
-            <marker date="1558050253288" expanded="true" signature="6100:6218" ph="/* em.AddComponentData(blockPrefab, new BlockInvisible()); ... */" />
-            <marker date="1558050253288" expanded="true" signature="6288:6677" ph="{...}" />
-            <marker date="1558050253288" expanded="true" signature="6345:6544" ph="{...}" />
+            <marker date="1558116026513" expanded="false" signature="6:296" ph="..." />
+            <marker date="1558116026513" expanded="true" signature="348:9050" ph="{...}" />
+            <marker date="1558116026513" expanded="true" signature="617:2812" ph="{...}" />
+            <marker date="1558116026513" expanded="true" signature="647:867" ph="{...}" />
+            <marker date="1558116026513" expanded="true" signature="869:1226" ph="/* List&lt;Vector2&gt; uvs = new List&lt;Vector2&gt;(); ... */" />
+            <marker date="1558116026513" expanded="true" signature="1253:2806" ph="/* var mesh = new Mesh(); ... */" />
+            <marker date="1558116026513" expanded="true" signature="2859:2943" ph="{...}" />
+            <marker date="1558116026513" expanded="true" signature="2988:4037" ph="{...}" />
+            <marker date="1558116026513" expanded="true" signature="3182:3892" ph="{...}" />
+            <marker date="1558116026513" expanded="true" signature="3237:3882" ph="{...}" />
+            <marker date="1558116026513" expanded="true" signature="3302:3868" ph="{...}" />
+            <marker date="1558116026513" expanded="true" signature="4114:4461" ph="{...}" />
+            <marker date="1558116026513" expanded="true" signature="4557:7447" ph="{...}" />
+            <marker date="1558116026513" expanded="true" signature="4920:7441" ph="{...}" />
+            <marker date="1558116026513" expanded="true" signature="5056:7325" ph="{...}" />
+            <marker date="1558116026513" expanded="true" signature="5122:7294" ph="{...}" />
+            <marker date="1558116026513" expanded="true" signature="5196:7276" ph="{...}" />
+            <marker date="1558116026513" expanded="true" signature="5629:7086" ph="{...}" />
+            <marker date="1558116026513" expanded="true" signature="5716:7060" ph="{...}" />
+            <marker date="1558116026513" expanded="true" signature="5811:7030" ph="{...}" />
+            <marker date="1558116026513" expanded="true" signature="6167:6349" ph="/* When tidx is 1, that means we've on a this chunk's border. We dont ... */" />
+            <marker date="1558116026513" expanded="true" signature="6401:6580" ph="{...}" />
+            <marker date="1558116026513" expanded="true" signature="6817:6996" ph="{...}" />
+            <marker date="1558116026513" expanded="true" signature="7124:7254" ph="{...}" />
+            <marker date="1558116026513" expanded="true" signature="7568:7829" ph="{...}" />
+            <marker date="1558116026513" expanded="true" signature="7869:8595" ph="{...}" />
+            <marker date="1558116026513" expanded="true" signature="8022:8121" ph="{...}" />
+            <marker date="1558116026513" expanded="true" signature="8659:9048" ph="{...}" />
+            <marker date="1558116026513" expanded="true" signature="8716:8915" ph="{...}" />
           </folding>
         </state>
       </provider>

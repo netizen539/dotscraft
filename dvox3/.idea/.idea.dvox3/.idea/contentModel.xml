@@ -4,7 +4,6 @@
     <e p="$USER_HOME$/.Rider2018.3/system/extResources" t="IncludeRecursive" />
     <e p="$USER_HOME$/.Rider2018.3/system/resharper-host/local/Transient/ReSharperHost/v183/SolutionCaches/_dvox3.-1765770036.00" t="ExcludeRecursive" />
     <e p="$PROJECT_DIR$" t="IncludeRecursive">
-      <e p="Assembly-CSharp-Editor.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
         <e p="Components" t="Include">
@@ -38,9 +37,6 @@
         </e>
         <e p="VoxelMaster" t="Include">
           <e p="Changelog.txt" t="Include" />
-          <e p="Editor" t="Include">
-            <e p="BlockInfoEditor.cs" t="Include" />
-          </e>
           <e p="Scripts" t="Include">
             <e p="BaseGeneration.cs" t="Include" />
             <e p="BasicCamera.cs" t="Include" />

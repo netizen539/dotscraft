@@ -19,8 +19,10 @@ public class ChunkBuildMeshJS : JobComponentSystem
     static Entity blockPrefab;
     static RenderMesh cubeRenderMesh;
     static Mesh cubeMesh = null;
-
-    private static Mesh GetCubeMesh()
+    static int TILEING = 16;
+    static float UVPADDING = 0f;
+    
+    public static Mesh GetCubeMesh()
     {
         if (!cubeMesh) 
         { 
@@ -29,15 +31,118 @@ public class ChunkBuildMeshJS : JobComponentSystem
             GameObject.Destroy(go);
             cubeMesh = mesh;
         }
-    
+
+//        List<Vector2> uvs = new List<Vector2>();
+//        //Add UV coordinates for each side of the cube.
+//        uvs.AddRange(GetUVs(0)); 
+//        uvs.AddRange(GetUVs(1));
+//        uvs.AddRange(GetUVs(2));
+//        uvs.AddRange(GetUVs(3));
+//        uvs.AddRange(GetUVs(4));
+//        uvs.AddRange(GetUVs(5));
+//        cubeMesh.SetUVs(0, uvs);
+//
         return cubeMesh;
+
+//        var mesh = new Mesh();
+//
+//        mesh.vertices = new[]
+//        {
+//            new Vector3(-0.5f, -0.5f,  0.5f), //0 
+//            new Vector3(-0.5f,  0.5f,  0.5f), //1
+//            new Vector3( 0.5f,  0.5f,  0.5f), //2
+//            new Vector3( 0.5f, -0.5f,  0.5f), //3
+//            
+//            new Vector3(-0.5f, -0.5f, -0.5f), //4
+//            new Vector3(-0.5f,  0.5f, -0.5f), //5
+//            new Vector3( 0.5f,  0.5f, -0.5f), //6
+//            new Vector3( 0.5f, -0.5f, -0.5f), //7
+//        };
+//        
+//        mesh.triangles = new[]
+//        {
+//            0, 2, 1,
+//            0, 3, 2,
+//            
+//            4, 5, 6,
+//            4, 6, 7,
+//
+//            
+//            1, 6, 5,
+//            1, 2, 6,
+//            
+//            0, 4, 7,
+//            0, 7, 3,
+//
+//            
+//            3, 6, 2,
+//            3, 7, 6,
+//            
+//            0, 1, 5,
+//            0, 5, 4,
+//        };
+//
+//        var uv = GetUVs(1);
+//        mesh.uv = new[]
+//        {
+//            uv[0], uv[1], uv[2], uv[3], 
+//            uv[0], uv[1], uv[2], uv[3],
+//            uv[0], uv[1], uv[2], uv[3],
+//            uv[0], uv[1], uv[2], uv[3],
+//            uv[0], uv[1], uv[2], uv[3],
+//            uv[0], uv[1], uv[2], uv[3],
+//        };
+//
+//
+//        mesh.normals = new[]
+//        {
+//            new Vector3(0, 0, 1), 
+//            new Vector3(0, 0, 1),
+//            new Vector3(0, 0, 1),
+//            new Vector3(0, 0, 1),
+//            
+//            
+//        };
+//
+//
+//        return mesh;
     }
 
     private static Material GetCubeMaterial()
     {
-        return Resources.Load("cubeMaterial", typeof(Material)) as Material;
+        return Resources.Load("grass", typeof(Material)) as Material;
     }
 
+    private static Vector2[] GetUVs(int id)
+    {
+        Vector2[] uv = new Vector2[4];
+        float tiling = TILEING;
+        int id2 = id + 1;
+        float o = 1f / tiling;
+        int i = 0;
+        for (int y = 0; y < tiling; y++)
+        {
+            for (int x = 0; x < tiling; x++)
+            {
+                i++;
+                if (i == id2)
+                {
+                    float padding = UVPADDING / tiling; // Adding a little padding to prevent UV bleeding (to fix)
+                    uv[0] = new Vector2(x / tiling + padding, 1f - (y / tiling) - padding);
+                    uv[1] = new Vector2(x / tiling + o - padding, 1f - (y / tiling) - padding);
+                    uv[2] = new Vector2(x / tiling + o - padding, 1f - (y / tiling + o) + padding);
+                    uv[3] = new Vector2(x / tiling + padding, 1f - (y / tiling + o) + padding);
+                    return uv;
+                }
+            }
+        }
+        uv[0] = Vector2.zero;
+        uv[1] = Vector2.zero;
+        uv[2] = Vector2.zero;
+        uv[3] = Vector2.zero;
+        return uv;
+    }
+    
     private static int FlattenToIdx(int x, int y, int z, int ChunkSize)
     {
         if (x < 0 || x >= ChunkSize)
