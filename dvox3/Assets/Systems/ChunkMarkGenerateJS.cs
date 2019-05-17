@@ -15,11 +15,12 @@ public class ChunkMarkGenerateJS : JobComponentSystem
 {
     //public static Dictionary<float3, int> chunks = new Dictionary<float3, int>();
     public static Dictionary<float3, int> chunks;
-    public static readonly float generationDistance = 128.0f;
+    public static readonly float generationDistance = 256.0f;
     public static readonly float generationDistanceSquared = generationDistance * generationDistance;
     public static readonly int ChunkSize = 16;
     
     BeginSimulationEntityCommandBufferSystem ecbSystem;
+    static GameObject playerGameObject = null;
     
     protected override void OnCreate()
     {
@@ -97,11 +98,12 @@ public class ChunkMarkGenerateJS : JobComponentSystem
     {
         [ReadOnly]
         public EntityCommandBuffer.Concurrent commandBuffer;
+        public float3 playerPosition;
 
         public void Execute(Entity entity, int index, ref Translation c0, ref ChunkGenerator c1)
         {
 
-            float3 curPos = c0.Value;
+            float3 curPos = playerPosition;
             float3 lastPos = c1.lastPos;
 
             if (!lastPos.Equals(curPos))
@@ -112,11 +114,22 @@ public class ChunkMarkGenerateJS : JobComponentSystem
             }
         }
     }
+
+    private static float3 GetPlayerPosition()
+    {
+        if (!playerGameObject)
+        {
+            playerGameObject = GameObject.Find("/Player");
+        }
+
+        return new float3(playerGameObject.transform.position);
+    }
     
     protected override JobHandle OnUpdate(JobHandle inputDeps)
     {
         var job = new SpawnChunksAround();
         job.commandBuffer = ecbSystem.CreateCommandBuffer().ToConcurrent();
+        job.playerPosition = GetPlayerPosition();
         var handle = job.Schedule(this, inputDeps);
         ecbSystem.AddJobHandleForProducer(handle);
         return handle;   
