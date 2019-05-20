@@ -8,3 +8,9 @@ public struct ChunkPosition : IComponentData
 {
     public float3 pos;
 }
+
+[InternalBufferCapacity(128)]
+public struct ChunkChildBlock : IBufferElementData
+{
+    public Entity Value;
+}

@@ -154,7 +154,7 @@ public class ChunkBuildMeshJS : JobComponentSystem
         return uv;
     }
     
-    private static int FlattenToIdx(int x, int y, int z, int ChunkSize)
+    public static int FlattenToIdx(int x, int y, int z, int ChunkSize)
     {
         if (x < 0 || x >= ChunkSize)
             return -1; //out of bounds
@@ -165,14 +165,20 @@ public class ChunkBuildMeshJS : JobComponentSystem
         if (z < 0 || z >= ChunkSize)
             return -1; //out of bounds
         
-        int idx = z + (y * ChunkSize) + (x * ChunkSize * ChunkSize);
-        return idx;
+        return z + (y * ChunkSize) + (x * ChunkSize * ChunkSize);
+    }
+    
+    public static float3 IdxToFlatten(int idx, int ChunkSize)
+    {
+        var z = idx / (ChunkSize * ChunkSize);
+        idx -= z * ChunkSize * ChunkSize;
+        var y = idx / ChunkSize;
+        var x = idx % ChunkSize;
+        return new float3(x, y, z);
     }
     
     struct ChunkBuildMeshJob : IJobForEachWithEntity<ChunkPosition, ChunkFinishedGenerate>
     {
-        public EntityCommandBuffer.Concurrent commandBuffer;
-
         public int ChunkSize;
         
         [NativeDisableParallelForRestriction]
@@ -237,17 +243,11 @@ public class ChunkBuildMeshJS : JobComponentSystem
 
                         if (visible)
                         {
-            //                bufferOut.Add(new ChunkBufferBlockToCreateData { blockId = id, position = pos});
-                            
-                            var ent = commandBuffer.Instantiate(index, blockPrefab[id]);
-                            var translation = new Translation { Value = pos };
-                            commandBuffer.SetComponent(index, ent, translation);
+                            bufferOut.Add(new ChunkBufferBlockToCreateData { blockId = id, position = pos});
                         }
                     }
                 }
             }
-            
-            commandBuffer.RemoveComponent<ChunkFinishedGenerate>(index, entity);
         }
     }
     
@@ -263,15 +263,20 @@ public class ChunkBuildMeshJS : JobComponentSystem
         {
             DynamicBuffer<ChunkBufferBlockToCreateData> buffer = cbd[entity];
 
+            DynamicBuffer<ChunkChildBlock> children = commandBuffer.SetBuffer<ChunkChildBlock>(index, entity);
+            children.Clear();
+            
             for (int i = 0; i < buffer.Length; ++i)
             {
                 var e = buffer[i];
 
                 var ent = commandBuffer.Instantiate(index, blockPrefab[e.blockId]);
-                var translation = new Translation { Value = chunkPos.pos };
-                commandBuffer.SetComponent(index, ent, translation);
+                commandBuffer.SetComponent(index, ent, new Translation { Value = e.position });
+                
+                children.Add(new ChunkChildBlock {Value = ent});
             }
             commandBuffer.RemoveComponent<ChunkFinishedGenerate>(index, entity);
+            commandBuffer.AddComponent(index, entity, new ChunkSpawned());
         }
     }
     
@@ -304,19 +309,18 @@ public class ChunkBuildMeshJS : JobComponentSystem
     {
         var job = new ChunkBuildMeshJob
         {
-            commandBuffer = ecbSystem.CreateCommandBuffer().ToConcurrent(),
             ChunkSize = ChunkMarkGenerateJS.ChunkSize,
             cbd = GetBufferFromEntity<ChunkBufferData>(),
             cbdOut = GetBufferFromEntity<ChunkBufferBlockToCreateData>()
         };
         var handle = job.Schedule(this, inputDeps);
         
-//        var jobAfter = new ChunkBuildMeshAfterJob
-//        {
-//            commandBuffer = ecbSystem.CreateCommandBuffer().ToConcurrent(),
-//            cbd = GetBufferFromEntity<ChunkBufferBlockToCreateData>()
-//        };
-//        handle = jobAfter.Schedule(this, handle);
+        var jobAfter = new ChunkBuildMeshAfterJob
+        {
+            commandBuffer = ecbSystem.CreateCommandBuffer().ToConcurrent(),
+            cbd = GetBufferFromEntity<ChunkBufferBlockToCreateData>()
+        };
+        handle = jobAfter.Schedule(this, handle);
         
         ecbSystem.AddJobHandleForProducer(handle);
 

@@ -15,3 +15,4 @@ public struct ChunkBufferBlockToCreateData : IBufferElementData
     public short blockId;
     public float3 position;
 }
+

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Cryptography.X509Certificates;
@@ -14,10 +15,16 @@ using Unity.Transforms;
 public class ChunkMarkGenerateJS : JobComponentSystem
 {
     //public static Dictionary<float3, int> chunks = new Dictionary<float3, int>();
-    public static Dictionary<float3, int> chunks;
-    public static readonly float generationDistance = 256.0f / 4.0f;
+    public static ConcurrentDictionary<float3, Entity> chunks;
+    public static readonly float generationDistance = 128.0f;
     public static readonly float generationDistanceSquared = generationDistance * generationDistance;
+    
+    public static readonly float degenerationDistance = 150.0f;
+    public static readonly float degenerationDistanceSquared = generationDistance * generationDistance;
+    
     public static readonly int ChunkSize = 16;
+
+    private float3 lastPlayerPosition;
     
     BeginSimulationEntityCommandBufferSystem ecbSystem;
     static GameObject playerGameObject = null;
@@ -26,7 +33,7 @@ public class ChunkMarkGenerateJS : JobComponentSystem
     {
         ecbSystem = World.GetOrCreateSystem<BeginSimulationEntityCommandBufferSystem>();
       //  chunks = new NativeHashMap<float3, int>(4096, Allocator.Persistent);
-        chunks = new Dictionary<float3, int>();
+        chunks = new ConcurrentDictionary<float3, Entity>();
     }
 
     protected override void OnDestroy()
@@ -34,85 +41,82 @@ public class ChunkMarkGenerateJS : JobComponentSystem
        // chunks.Dispose();
     }
 
-    private struct Pair
-    {
-        public float distance;
-        public float3 pos;
-
-        public Pair(float distance, float3 pos)
-        {
-            this.distance = distance;
-            this.pos = pos;
-        }
-    }
-
     private static int ChunkRound(float v, int ChunkSize)
     {
         return ((int)(math.floor(v / ChunkMarkGenerateJS.ChunkSize)) * ChunkSize);
     }
 
-    private static void BuiildChunkGrid(float3 pos, int chunkSize, EntityCommandBuffer.Concurrent ecb, int index)
-    {        
-        int lowX = ChunkRound(pos.x - generationDistance, chunkSize);
-        int lowY = ChunkRound(pos.y - generationDistance, chunkSize);
-        int lowZ = ChunkRound(pos.z - generationDistance, chunkSize);
-
-        int highX = ChunkRound(pos.x + generationDistance, chunkSize);
-        int highY = ChunkRound(pos.y + generationDistance, chunkSize);
-        int highZ = ChunkRound(pos.z + generationDistance, chunkSize);
-
-        for (int x = lowX; x <= highX; x += chunkSize)
+    struct DeSpawnChunksAround : IJobForEachWithEntity<ChunkPosition, ChunkSpawned>
+    {
+        public EntityCommandBuffer.Concurrent commandBuffer;
+        public float3 playerPosition;
+        [ReadOnly]
+        public BufferFromEntity<ChunkChildBlock> childBuffer;
+        
+        public void Execute(Entity entity, int index, [ReadOnly] ref ChunkPosition chPos, [ReadOnly] ref ChunkSpawned sTag)
         {
-            for (int y = lowY; y <= highY; y += chunkSize)
+            float distanceSquared = math.distancesq(chPos.pos, playerPosition);
+
+            if (distanceSquared > degenerationDistanceSquared)
             {
-                for (int z = lowZ; z <= highZ; z += chunkSize)
+                Entity _d;
+                if (chunks.TryRemove(chPos.pos, out _d))
                 {
-                    float3 v = new float3(x, y, z);
-
-                    float distanceSquared = math.distancesq(v, pos);
-
-                    int _d;
-                    if (distanceSquared <= generationDistanceSquared && !chunks.TryGetValue(v, out _d))
-                    {
-                        int id = CreateChunkEntity(v, ecb, index);
-                        //chunks.ToConcurrent().TryAdd(v, id);
-                        chunks.Add(v, id);
+                    var children = childBuffer[entity];
+                    for (var i = 0; i < children.Length; ++i)
+                    { 
+                        commandBuffer.DestroyEntity(index, children[i].Value);
                     }
+                    commandBuffer.DestroyEntity(index, entity);
                 }
             }
         }
     }
-
-    private static int CreateChunkEntity(float3 v, EntityCommandBuffer.Concurrent ecb, int index)
-    {
-        var entity = ecb.CreateEntity(index);
-        var position = new ChunkPosition() { pos = v };
-        var pending = new ChunkPendingGenerate();
-        ecb.AddComponent(index, entity, pending);
-        ecb.AddComponent(index, entity, position);
-        ecb.AddBuffer<ChunkBufferData>(index, entity);
-        ecb.AddBuffer<ChunkBufferBlockToCreateData>(index, entity);
-        return entity.Index;
-    }
     
-    struct SpawnChunksAround : IJobForEachWithEntity<Translation, ChunkGenerator>
+    struct SpawnChunksAround : IJob
     {
-        [ReadOnly]
-        public EntityCommandBuffer.Concurrent commandBuffer;
+        public EntityCommandBuffer commandBuffer;
         public float3 playerPosition;
 
-        public void Execute(Entity entity, int index, ref Translation c0, ref ChunkGenerator c1)
+        public void Execute()
         {
+            int lowX = ChunkRound(playerPosition.x - generationDistance, ChunkSize);
+            int lowY = ChunkRound(playerPosition.y - generationDistance, ChunkSize);
+            int lowZ = ChunkRound(playerPosition.z - generationDistance, ChunkSize);
 
-            float3 curPos = playerPosition;
-            float3 lastPos = c1.lastPos;
+            int highX = ChunkRound(playerPosition.x + generationDistance, ChunkSize);
+            int highY = ChunkRound(playerPosition.y + generationDistance, ChunkSize);
+            int highZ = ChunkRound(playerPosition.z + generationDistance, ChunkSize);
 
-            if (!lastPos.Equals(curPos))
+            int cnt = 0;
+            for (int x = lowX; x <= highX; x += ChunkSize)
             {
-                c1.lastPos = curPos;
-                Console.WriteLine("RJ BUILD CHUNK GRID");
-                BuiildChunkGrid(lastPos, ChunkSize, commandBuffer, index);
+                for (int y = lowY; y <= highY; y += ChunkSize)
+                {
+                    for (int z = lowZ; z <= highZ; z += ChunkSize)
+                    {
+                        var v = new float3(x, y, z);
+                        float distanceSquared = math.distancesq(v, playerPosition);
+
+                        Entity _d;
+                        if (distanceSquared <= generationDistanceSquared && !chunks.TryGetValue(v, out _d))
+                        {
+                            var entity = commandBuffer.CreateEntity();
+                            var position = new ChunkPosition { pos = v };
+                            var pending = new ChunkPendingGenerate();
+                            commandBuffer.AddComponent(entity, pending);
+                            commandBuffer.AddComponent(entity, position);
+                            commandBuffer.AddBuffer<ChunkBufferData>(entity);
+                            commandBuffer.AddBuffer<ChunkChildBlock>(entity);
+                            commandBuffer.AddBuffer<ChunkBufferBlockToCreateData>(entity);
+                            
+                            //chunks.ToConcurrent().TryAdd(v, id);
+                            chunks.TryAdd(v, entity);
+                        }
+                    }
+                }
             }
+            //Debug.Log(cnt);
         }
     }
 
@@ -128,11 +132,37 @@ public class ChunkMarkGenerateJS : JobComponentSystem
     
     protected override JobHandle OnUpdate(JobHandle inputDeps)
     {
-        var job = new SpawnChunksAround();
-        job.commandBuffer = ecbSystem.CreateCommandBuffer().ToConcurrent();
-        job.playerPosition = GetPlayerPosition();
-        var handle = job.Schedule(this, inputDeps);
-        ecbSystem.AddJobHandleForProducer(handle);
-        return handle;   
+        var handle = inputDeps;
+        
+        if (PlayerPositionChanged())
+        {
+            var jobDespawn = new DeSpawnChunksAround
+            {
+                childBuffer = GetBufferFromEntity<ChunkChildBlock>(true),
+                commandBuffer = ecbSystem.CreateCommandBuffer().ToConcurrent(),
+                playerPosition = GetPlayerPosition()
+            };
+            handle = jobDespawn.Schedule(this, handle);
+            
+            var job = new SpawnChunksAround
+            {
+                commandBuffer = ecbSystem.CreateCommandBuffer(),
+                playerPosition = GetPlayerPosition()
+            };
+            handle = job.Schedule(handle);
+            ecbSystem.AddJobHandleForProducer(handle);
+        }
+
+        return handle;
+    }
+
+    bool PlayerPositionChanged()
+    {
+        var curPos = GetPlayerPosition();
+
+        var changed = !lastPlayerPosition.Equals(curPos); 
+        if (changed)
+            lastPlayerPosition = curPos;
+        return changed;
     }
 }

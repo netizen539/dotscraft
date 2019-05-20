@@ -6,3 +6,7 @@ using UnityEngine;
 public struct ChunkFinishedGenerate : IComponentData
 {
 }
+
+public struct ChunkSpawned : IComponentData
+{
+}
