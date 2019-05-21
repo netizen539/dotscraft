@@ -1,65 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="$USER_HOME$/.Rider2019.1/system/extResources" t="IncludeRecursive" />
-    <e p="$USER_HOME$/.Rider2019.1/system/resharper-host/local/Transient/ReSharperHost/v191/SolutionCaches/_dvox3.-1765770036.00" t="ExcludeRecursive" />
+    <e p="$USER_HOME$/.Rider2018.3/system/extResources" t="IncludeRecursive" />
+    <e p="$USER_HOME$/.Rider2018.3/system/resharper-host/local/Transient/ReSharperHost/v183/SolutionCaches/_dvox3.-1765770036.00" t="ExcludeRecursive" />
     <e p="$PROJECT_DIR$" t="IncludeRecursive">
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
-        <e p="Components" t="Include">
-          <e p="BlockInvisible.cs" t="Include" />
-          <e p="BlockTagComponent.cs" t="Include" />
-          <e p="ChunkBufferData.cs" t="Include" />
-          <e p="ChunkFinishedGenerate.cs" t="Include" />
-          <e p="ChunkGenerator.cs" t="Include" />
-          <e p="ChunkPendingGenerate.cs" t="Include" />
-          <e p="ChunkPosition.cs" t="Include" />
-          <e p="EmptyRJTestComponent.cs" t="Include" />
-          <e p="EntityPrefabComponent.cs" t="Include" />
-          <e p="MeshTagComponent.cs" t="Include" />
-        </e>
-        <e p="HelloECS" t="Include">
-          <e p="RotationSpeedAuthoring_ForEach.cs" t="Include" />
-          <e p="RotationSpeedSystem_ForEach.cs" t="Include" />
-          <e p="RotationSpeed_ForEach.cs" t="Include" />
-        </e>
-        <e p="Proxies" t="Include">
-          <e p="ChunkGeneratorProxy.cs" t="Include" />
-        </e>
-        <e p="Scripts" t="Include">
-          <e p="MeshHack.cs" t="Include" />
-        </e>
-        <e p="Systems" t="Include">
-          <e p="BlockVisibleJobSystem.cs" t="Include" />
-          <e p="ChunkBuildMeshJS.cs" t="Include" />
-          <e p="ChunkGenerateJS.cs" t="Include" />
-          <e p="ChunkMarkGenerateJS.cs" t="Include" />
-          <e p="SillyPlayerEntitySync.cs" t="Include" />
-        </e>
-        <e p="VoxelMaster" t="Include">
-          <e p="Changelog.txt" t="Include" />
-          <e p="Scripts" t="Include">
-            <e p="BaseGeneration.cs" t="Include" />
-            <e p="BasicCamera.cs" t="Include" />
-            <e p="Block.cs" t="Include" />
-            <e p="BlockDictionary.cs" t="Include" />
-            <e p="BlockInfo.cs" t="Include" />
-            <e p="BlockTexture.cs" t="Include" />
-            <e p="Chunk.cs" t="Include" />
-            <e p="ChunkManager.cs" t="Include" />
-            <e p="Examples" t="Include">
-              <e p="BlankGeneration.cs" t="Include" />
-              <e p="GenerationExample.cs" t="Include" />
-              <e p="HelperExample.cs" t="Include" />
-              <e p="LoadingExample.cs" t="Include" />
-              <e p="ShapesExample.cs" t="Include" />
-            </e>
-            <e p="VoxelGeneration.cs" t="Include" />
-            <e p="VoxelTerrain.cs" t="Include" />
+        <e p="ECS" t="Include">
+          <e p="Components" t="Include">
+            <e p="BlockTagComponent.cs" t="Include" />
+            <e p="ChunkBufferData.cs" t="Include" />
+            <e p="ChunkFinishedGenerate.cs" t="Include" />
+            <e p="ChunkGenerator.cs" t="Include" />
+            <e p="ChunkPendingGenerate.cs" t="Include" />
+            <e p="ChunkPosition.cs" t="Include" />
+          </e>
+          <e p="Proxies" t="Include">
+            <e p="ChunkGeneratorProxy.cs" t="Include" />
+          </e>
+          <e p="Systems" t="Include">
+            <e p="ChunkBuildMeshJS.cs" t="Include" />
+            <e p="ChunkGenerateJS.cs" t="Include" />
+            <e p="ChunkMarkGenerateJS.cs" t="Include" />
           </e>
         </e>
+        <e p="Scripts" t="Include">
+          <e p="BasicCamera.cs" t="Include" />
+          <e p="MeshHack.cs" t="Include" />
+        </e>
       </e>
-      <e p="Temp/bin" t="ExcludeRecursive" />
+      <e p="Library" t="ExcludeRecursive" />
+      <e p="Temp" t="ExcludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+      </e>
       <e p="dvox3.sln" t="IncludeFlat" />
       <e p="obj" t="ExcludeRecursive" />
       <e p="packages" t="ExcludeRecursive" />
